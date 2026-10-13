@@ -1,0 +1,171 @@
+/* SSJU Connect - Quora & Reddit Inspired Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --quora-blue: #2563eb;
+  --reddit-orange: #ff4500;
+  --ssju-accent: #1e3a8a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+}
+
+/* Reddit/Quora Vote Pill */
+.vote-pill {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vote-btn-active-up {
+  color: #ff4500 !important;
+  background-color: rgba(255, 69, 0, 0.12) !important;
+}
+
+.vote-btn-active-down {
+  color: #6366f1 !important;
+  background-color: rgba(99, 102, 241, 0.12) !important;
+}
+
+/* Line clamp helpers */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth modal animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal {
+  animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-toast {
+  animation: toastSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Image preview hover effect */
+.post-image-container {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.post-image-container img {
+  transition: transform 0.3s ease;
+}
+
+.post-image-container:hover img {
+  transform: scale(1.02);
+}
+
+/* Nav Item Active State */
+.nav-link.active {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.dark .nav-link.active {
+  background-color: rgba(30, 58, 138, 0.35);
+  color: #93c5fd;
+}
+
+/* Mobile bottom nav safe padding */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .mobile-bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Badge Glow */
+.badge-verified {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+/* Badge Paper */
+.badge-paper {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
+/* Print Styles for Exam Papers */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printablePaperArea, #printablePaperArea * {
+    visibility: visible;
+  }
+  #printablePaperArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

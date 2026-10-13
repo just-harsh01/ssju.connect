@@ -1,0 +1,21 @@
+{
+  "name": "ssju-connect",
+  "version": "1.0.0",
+  "description": "Quora and Reddit style responsive campus portal for Soban Singh Jeena University (SSJU) with stream selection, PDF question paper repository, and campus social feeds.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "python server.py"
+  },
+  "keywords": [
+    "quora",
+    "reddit",
+    "ssju",
+    "campus-portal",
+    "question-papers",
+    "pyq",
+    "responsive"
+  ],
+  "author": "SSJU Connect Team",
+  "license": "MIT"
+}

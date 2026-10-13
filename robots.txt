@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location for Googlebot
+Sitemap: https://ssju-connect.vercel.app/sitemap.xml
