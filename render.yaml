@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ssju-connect
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/status
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+    disk:
+      name: ssju-connect-data
+      mountPath: /var/data
+      sizeGB: 1

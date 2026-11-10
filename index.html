@@ -2,9 +2,9 @@
 <html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>SSJU Connect - Soban Singh Jeena University Campus Social & PYQ Vault</title>
-  <meta name="description" content="SSJU Connect is the official student community and academic portal for Soban Singh Jeena University (SSJU), Almora. Ask questions, discuss campus life, select streams, and download or upload previous year question papers (PYQs)." />
+  <meta name="description" content="SSJU Connect is a student community for Soban Singh Jeena University (SSJU), Almora. Discuss campus life, explore faculties, and share previous-year question paper PDFs." />
   <meta name="keywords" content="SSJU Connect, Soban Singh Jeena University, SSJU Almora, SSJU question papers, SSJU PYQ, SSJU syllabus, SSJU student portal, Almora university" />
   <meta name="author" content="SSJU Connect" />
   <meta name="robots" content="index, follow" />
@@ -14,6 +14,7 @@
   <meta property="og:title" content="SSJU Connect - Soban Singh Jeena University Campus Portal" />
   <meta property="og:description" content="Campus discussions, department streams, and previous year question paper vault for SSJU students." />
   <meta property="og:site_name" content="SSJU Connect" />
+  <meta property="og:url" content="https://ssju-connect.onrender.com/" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -28,7 +29,7 @@
     "name": "SSJU Connect",
     "alternateName": "Soban Singh Jeena University Connect",
     "description": "Student social network and question papers archive for Soban Singh Jeena University, Almora.",
-    "url": "https://ssju-connect.vercel.app",
+    "url": "https://ssju-connect.onrender.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Almora",
@@ -65,23 +66,46 @@
     };
   </script>
 
-  <!-- jsPDF Library for Question Paper generation and export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --quora-blue: #2563eb;
+      --reddit-orange: #ff4500;
+      --ssju-accent: #1e3a8a;
+    }
+    * { box-sizing: border-box; font-family: var(--font-sans); }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    .dark ::-webkit-scrollbar-thumb { background: #334155; }
+    .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .dark .glass-panel { background: rgba(15, 23, 42, 0.85); }
+    .vote-pill { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .vote-btn-active-up { color: #ff4500 !important; background-color: rgba(255, 69, 0, 0.12) !important; }
+    .vote-btn-active-down { color: #6366f1 !important; background-color: rgba(99, 102, 241, 0.12) !important; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .animate-modal { animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    @keyframes toastSlideUp { from { opacity: 0; transform: translateY(12px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .animate-toast { animation: toastSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+  </style>
 </head>
 
-<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white pb-16 md:pb-6">
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white pb-24 lg:pb-6">
 
   <!-- ========================================================
        TOP HEADER / NAVBAR (QUORA & REDDIT STYLE)
   ======================================================== -->
   <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-0 min-h-16 sm:h-16 flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-2 gap-y-2 sm:gap-4">
       
       <!-- Logo & Campus Identity -->
-      <div class="flex items-center gap-3">
+      <div class="order-1 flex items-center gap-2.5 sm:gap-3 shrink-0">
         <a href="#" onclick="window.navigateTo('home'); return false;" class="flex items-center gap-2.5 group">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-blue-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +131,7 @@
       </div>
 
       <!-- Universal Search Bar (Quora Style with Shortcut hint) -->
-      <div class="flex-grow max-w-xl mx-1 sm:mx-4">
+      <div class="order-3 basis-full sm:order-2 sm:basis-auto flex-grow min-w-0 max-w-xl mx-0 sm:mx-4">
         <div class="relative">
           <input
             type="text"
@@ -123,12 +147,12 @@
       </div>
 
       <!-- Right Header Actions (Share App, Create Post, Corner Profile & Settings) -->
-      <div class="flex items-center gap-1.5 sm:gap-2.5">
+      <div class="order-2 ml-auto sm:ml-0 sm:order-3 flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         
         <!-- Share App Button (Prominent) -->
         <button
           id="btnNavShareApp"
-          class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 dark:text-blue-300 text-xs font-bold transition shadow-xs"
+          class="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 dark:text-blue-300 text-xs font-bold transition shadow-xs"
           title="Share SSJU Connect App"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +164,7 @@
         <!-- "+ Create Post" Button -->
         <button
           id="btnNavCreatePost"
-          class="flex items-center gap-1 px-3 sm:px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm hover:shadow"
+          class="hidden lg:flex items-center gap-1 px-3 sm:px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm hover:shadow"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -181,6 +205,10 @@
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 My Profile & Activity
               </button>
+              <button id="menuItemEditProfile" onclick="window.openEditProfileModal(); document.getElementById('headerUserDropdown').classList.add('hidden');" class="w-full text-left px-4 py-2 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 flex items-center gap-2.5 transition">
+                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                Edit My Profile
+              </button>
               <button onclick="window.navigateTo('streams'); document.getElementById('headerUserDropdown').classList.add('hidden');" class="w-full text-left px-4 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 flex items-center gap-2.5 transition">
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                 Select Department / Stream
@@ -208,6 +236,9 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
                 Share This App
               </button>
+              <button id="menuItemLogout" class="w-full text-left px-4 py-2 text-xs font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-slate-800 flex items-center gap-2.5 transition">
+                <span aria-hidden="true">↪</span> Log out
+              </button>
             </div>
           </div>
         </div>
@@ -219,11 +250,11 @@
   <!-- ========================================================
        MAIN APP CONTAINER (3-COLUMN QUORA/REDDIT LAYOUT)
   ======================================================== -->
-  <div class="max-w-7xl mx-auto px-2 sm:px-4 py-4 w-full flex-grow">
-    <div class="grid grid-cols-12 gap-4 lg:gap-6">
+  <div class="max-w-7xl mx-auto px-3 sm:px-4 py-4 w-full flex-grow min-w-0">
+    <div class="grid grid-cols-12 gap-3 sm:gap-4 lg:gap-6 min-w-0">
 
       <!-- LEFT SIDEBAR: NAVIGATION & STREAMS DIRECTORY (DESKTOP) -->
-      <aside id="leftSidebar" class="hidden md:block md:col-span-4 lg:col-span-3 space-y-4">
+      <aside id="leftSidebar" class="hidden lg:block lg:col-span-3 min-w-0 space-y-4">
         <!-- Main Navigation Links -->
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-3 shadow-sm">
           <nav class="space-y-1 text-xs font-semibold">
@@ -262,31 +293,31 @@
           <div class="space-y-1 text-xs">
             <button onclick="window.filterFeedByStream('science')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>🔬</span> Faculty of Science</span>
-              <span class="text-[10px] text-slate-400">78 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
             <button onclick="window.filterFeedByStream('arts')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>📚</span> Arts & Humanities</span>
-              <span class="text-[10px] text-slate-400">92 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
             <button onclick="window.filterFeedByStream('commerce')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>📊</span> Faculty of Commerce</span>
-              <span class="text-[10px] text-slate-400">54 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
             <button onclick="window.filterFeedByStream('bca_mca')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>💻</span> Computer Applications</span>
-              <span class="text-[10px] text-slate-400">46 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
             <button onclick="window.filterFeedByStream('education')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>🎓</span> Education (B.Ed)</span>
-              <span class="text-[10px] text-slate-400">38 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
             <button onclick="window.filterFeedByStream('yoga')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>🧘</span> Yoga & Wellness</span>
-              <span class="text-[10px] text-slate-400">20 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
             <button onclick="window.filterFeedByStream('law')" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between transition text-slate-700 dark:text-slate-300">
               <span class="flex items-center gap-2"><span>⚖️</span> Faculty of Law</span>
-              <span class="text-[10px] text-slate-400">26 papers</span>
+              <span class="text-[10px] text-slate-400">Explore →</span>
             </button>
           </div>
         </div>
@@ -299,12 +330,12 @@
       </aside>
 
       <!-- CENTER COLUMN: ACTIVE VIEW (HOME / STREAMS / PAPERS / PROFILE / SETTINGS) -->
-      <main id="mainContentArea" class="col-span-12 md:col-span-8 lg:col-span-6 xl:col-span-6.5">
+      <main id="mainContentArea" class="col-span-12 lg:col-span-9 xl:col-span-6 min-w-0">
         <!-- Injected dynamically by app.js -->
       </main>
 
       <!-- RIGHT SIDEBAR: WIDGETS (DESKTOP ONLY) -->
-      <aside id="rightSidebarArea" class="hidden lg:block lg:col-span-3 xl:col-span-2.5 space-y-4">
+      <aside id="rightSidebarArea" class="hidden xl:block xl:col-span-3 min-w-0 space-y-4">
         <!-- Injected dynamically by app.js -->
       </aside>
 
@@ -314,7 +345,7 @@
   <!-- ========================================================
        MOBILE BOTTOM NAVIGATION BAR (QUORA/REDDIT MOBILE APP STYLE)
   ======================================================== -->
-  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 flex items-center justify-around py-2 mobile-bottom-nav">
+  <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 flex items-center justify-around py-2 mobile-bottom-nav">
     <button onclick="window.navigateTo('home'); return false;" data-mobile-target="home" class="flex flex-col items-center gap-0.5 text-xs text-blue-600 dark:text-blue-400 font-semibold">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
       <span>Feed</span>
@@ -522,13 +553,13 @@
             <input
               type="file"
               id="paperFileInput"
-              accept="application/pdf"
+              accept="application/pdf,.pdf"
               class="hidden"
             />
             <label for="paperFileInput" class="cursor-pointer block">
               <svg class="w-8 h-8 mx-auto text-emerald-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
-              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Choose PDF file or click here to browse</span>
-              <p id="paperFileNameDisplay" class="text-[11px] text-slate-400 mt-1">Accepts authentic .pdf exam papers up to 25MB</p>
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Choose the original PDF exam paper</span>
+              <p id="paperFileNameDisplay" class="text-[11px] text-slate-400 mt-1">PDF files up to 20 MB. The vault stores and shares the uploaded original.</p>
             </label>
           </div>
         </div>
@@ -538,17 +569,26 @@
           <textarea
             id="paperDescriptionInput"
             rows="2"
-            placeholder="Brief overview of questions or units covered in this paper..."
+            placeholder="Brief overview of questions, units, or topics covered in this paper..."
             class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-2.5 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           ></textarea>
+        </div>
+
+        <!-- Upload Status Indicator -->
+        <div id="paperUploadStatus" class="hidden text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-2 py-1">
+          <svg class="animate-spin h-4 w-4 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span id="paperUploadStatusText">Uploading exam paper to server...</span>
         </div>
 
         <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-2">
           <button type="button" onclick="window.closeUploadPaperModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition">
             Cancel
           </button>
-          <button type="submit" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition">
-            Upload & Share (+25 Karma)
+          <button id="btnSubmitUploadPaper" type="submit" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
+            <span>🚀</span> Upload & Share (+25 Karma)
           </button>
         </div>
       </form>
@@ -572,7 +612,7 @@
           Invite college friends, hostel mates, and department groups to download PYQ papers and join campus discussions!
         </p>
 
-        <!-- Dynamic QR Code SVG Container -->
+        <!-- Real QR image from a QR code service -->
         <div id="shareQrCodeContainer" class="flex justify-center mb-3">
           <!-- Injected dynamically -->
         </div>
@@ -628,16 +668,24 @@
   <!-- ========================================================
        MODAL 4: QUESTION PAPER VIEWER / PREVIEW MODAL
   ======================================================== -->
-  <div id="paperPreviewModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full p-5 sm:p-6 shadow-2xl animate-modal relative max-h-[90vh] flex flex-col">
-      <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100 dark:border-slate-800 flex-shrink-0">
-        <h2 id="previewModalTitle" class="text-base font-bold text-slate-900 dark:text-white truncate max-w-md">
-          Question Paper Preview
-        </h2>
-        <button id="closePreviewPaperModalBtn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg">✕</button>
+  <div id="paperPreviewModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-4xl w-full p-4 sm:p-6 shadow-2xl animate-modal relative max-h-[92vh] flex flex-col">
+      <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 dark:border-slate-800 flex-shrink-0">
+        <div class="flex items-center gap-2 truncate pr-2">
+          <span class="text-xl">📄</span>
+          <h2 id="previewModalTitle" class="text-sm sm:text-base font-bold text-slate-900 dark:text-white truncate">
+            Question Paper Preview
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="previewModalOpenTabBtn" href="#" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50 rounded-xl transition border border-blue-200 dark:border-blue-800">
+            <span>↗️</span> Open Full View
+          </a>
+          <button id="closePreviewPaperModalBtn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1.5 rounded-lg text-lg">✕</button>
+        </div>
       </div>
 
-      <div id="previewModalBody" class="overflow-y-auto flex-grow pr-1 mb-4">
+      <div id="previewModalBody" class="overflow-y-auto flex-grow pr-1 mb-3">
         <!-- Rendered dynamically -->
       </div>
 
@@ -645,10 +693,15 @@
         <button onclick="document.getElementById('paperPreviewModal').classList.add('hidden')" class="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition">
           Close Preview
         </button>
-        <button id="previewModalDownloadBtn" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          Download PDF Now
-        </button>
+        <div class="flex items-center gap-2">
+          <a id="previewModalOpenTabBtnMobile" href="#" target="_blank" rel="noopener noreferrer" class="sm:hidden px-3 py-2 text-xs font-semibold text-blue-600 dark:text-blue-400 border border-blue-200 rounded-xl">
+            Open Tab ↗️
+          </a>
+          <button id="previewModalDownloadBtn" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download PDF Now
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -662,11 +715,97 @@
   </div>
 
   <!-- ========================================================
+       MODAL 6: EDIT PROFILE MODAL
+  ======================================================== -->
+  <div id="editProfileModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-lg w-full p-5 sm:p-6 shadow-2xl animate-modal relative">
+      <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100 dark:border-slate-800">
+        <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>👤</span> Edit Student Profile
+        </h2>
+        <button id="closeEditProfileModalBtn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 rounded-lg">✕</button>
+      </div>
+
+      <form id="editProfileModalForm" class="space-y-4">
+        <!-- Avatar Preview and Selection -->
+        <div class="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700">
+          <img id="editProfileAvatarPreview" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=250&q=80" alt="Avatar" class="w-16 h-16 rounded-2xl object-cover border-2 border-blue-500 shadow-sm bg-white" />
+          <div class="flex-grow">
+            <label class="block text-[11px] font-bold text-slate-500 uppercase mb-1">Avatar Image URL</label>
+            <input type="text" id="modalUserAvatar" placeholder="Paste image link or choose preset below" class="w-full text-xs bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-800 dark:text-slate-100" />
+            <!-- Quick preset avatar badges -->
+            <div class="flex items-center gap-1.5 mt-2 flex-wrap">
+              <span class="text-[10px] text-slate-400">Presets:</span>
+              <button type="button" class="preset-avatar-btn text-[11px] px-2 py-0.5 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-semibold" data-avatar="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=250&q=80">Avatar 1</button>
+              <button type="button" class="preset-avatar-btn text-[11px] px-2 py-0.5 rounded-lg bg-purple-100 dark:purple-900/40 text-purple-700 dark:text-purple-300 font-semibold" data-avatar="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=250&q=80">Avatar 2</button>
+              <button type="button" class="preset-avatar-btn text-[11px] px-2 py-0.5 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-semibold" data-avatar="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=250&q=80">Avatar 3</button>
+              <button type="button" class="preset-avatar-btn text-[11px] px-2 py-0.5 rounded-lg bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 font-semibold" data-avatar="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=250&q=80">Avatar 4</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Your Full Name <span class="text-rose-500">*</span></label>
+            <input type="text" id="modalUserName" required placeholder="e.g. Rahul Sharma" class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Username <span class="text-rose-500">*</span></label>
+            <div class="relative">
+              <span class="absolute left-3 top-2 text-xs text-slate-400 font-mono">@</span>
+              <input type="text" id="modalUserUsername" required placeholder="rahul_ssju" class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl pl-7 pr-3 py-2 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 font-mono" />
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Enrolled Faculty / Stream</label>
+            <select id="modalUserStream" class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500"></select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Current Semester</label>
+            <select id="modalUserSemester" class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500">
+              <option value="1">Semester 1</option>
+              <option value="2">Semester 2</option>
+              <option value="3">Semester 3</option>
+              <option value="4">Semester 4</option>
+              <option value="5">Semester 5</option>
+              <option value="6">Semester 6</option>
+              <option value="7">Semester 7</option>
+              <option value="8">Semester 8</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">University Roll Number</label>
+          <input type="text" id="modalUserRollNo" placeholder="e.g. SSJU/2024/BCA/015" class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-800 dark:text-slate-100 font-mono" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Bio / About You</label>
+          <textarea id="modalUserBio" rows="3" placeholder="Tell your college classmates and teachers about yourself..." class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-2.5 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-2">
+          <button type="button" id="cancelEditProfileModalBtn" class="px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition">
+            Cancel
+          </button>
+          <button type="submit" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5">
+            <span>💾</span> Save Profile Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================
        GLOBAL FLOATING TOAST NOTIFICATION CONTAINER
   ======================================================== -->
   <div id="toastContainer" class="fixed bottom-16 sm:bottom-6 right-3 sm:right-6 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
   <!-- Main Application Script Bundle -->
-  <script src="./js/app.bundle.js"></script>
+  <script src="./app.bundle.js"></script>
 </body>
 </html>

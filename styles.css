@@ -137,11 +137,63 @@
   color: #93c5fd;
 }
 
-/* Mobile bottom nav safe padding */
-@supports (padding: env(safe-area-inset-bottom)) {
-  .mobile-bottom-nav {
-    padding-bottom: env(safe-area-inset-bottom);
+/* Mobile bottom navigation respects the home-indicator safe area. */
+.mobile-bottom-nav {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 1023px) {
+  header {
+    padding-top: env(safe-area-inset-top, 0px);
   }
+
+  .mobile-bottom-nav > button {
+    flex: 1 1 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mobile-bottom-nav > button:nth-child(3) {
+    flex: 0 0 48px;
+  }
+
+  #toastContainer {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    width: auto;
+    max-width: none;
+  }
+}
+
+.post-card {
+  min-width: 0;
+}
+
+.post-card h3,
+.post-card .whitespace-pre-line {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 639px) {
+  /* Keep form controls usable without iOS focus zoom. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  select,
+  textarea {
+    max-width: 100%;
+    font-size: 16px !important;
+  }
+
+  #createPostModal,
+  #uploadPaperModal,
+  #shareAppModal,
+  #paperPreviewModal,
+  #editProfileModal {
+    align-items: flex-start;
+    padding-top: max(0.75rem, env(safe-area-inset-top, 0px));
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+  }
+
 }
 
 /* Badge Glow */

@@ -1,18 +1,11 @@
 @echo off
-title SSJU Connect - Campus Social Portal
+title SSJU Connect - Campus Social & PYQ Vault
 cd /d "%~dp0"
 echo ========================================================
-echo        Starting SSJU Connect Portal
+echo        Starting SSJU Connect Full-Stack Portal
 echo   Soban Singh Jeena University Campus Social & PYQ Hub
 echo ========================================================
 echo.
-
-where python >nul 2>nul
-if %ERRORLEVEL% EQU 0 (
-    python server.py
-    pause
-    goto end
-)
 
 where node >nul 2>nul
 if %ERRORLEVEL% EQU 0 (
@@ -21,7 +14,14 @@ if %ERRORLEVEL% EQU 0 (
     goto end
 )
 
-echo Opening directly in default browser...
-start index.html
+where python >nul 2>nul
+if %ERRORLEVEL% EQU 0 (
+    python server.py
+    pause
+    goto end
+)
+
+echo Node.js is required. Install it from https://nodejs.org/ and run start.bat again.
+pause
 
 :end

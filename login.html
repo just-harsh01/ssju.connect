@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Login – SSJU Connect</title>
+  <meta name="description" content="Login or create your SSJU Connect account." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { brand: { 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' } } } }
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    * { box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 40%, #2563eb 100%); min-height: 100vh; min-height: 100dvh; overflow-x: hidden; }
+    .card { background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); }
+    .inp { width:100%; min-width:0; padding:10px 14px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:16px; outline:none; transition:border 0.2s; }
+    .inp:focus { border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,0.12); }
+    .inp.error { border-color:#ef4444; }
+    .btn { width:100%; padding:12px; background:#1e3a8a; color:#fff; border:none; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer; transition:background 0.2s; }
+    .btn:hover { background:#1d4ed8; }
+    .btn:disabled { background:#94a3b8; cursor:not-allowed; }
+    .tab-btn { flex:1; min-height:48px; padding:10px; border:none; background:transparent; font-size:15px; font-weight:600; cursor:pointer; border-bottom:3px solid transparent; color:#64748b; transition:all 0.2s; }
+    .tab-btn.active { color:#1e3a8a; border-bottom-color:#1e3a8a; }
+    .alert { padding:10px 14px; border-radius:8px; font-size:14px; margin-bottom:12px; }
+    .alert-err { background:#fef2f2; color:#dc2626; border:1px solid #fecaca; }
+    .alert-ok { background:#f0fdf4; color:#16a34a; border:1px solid #bbf7d0; }
+    select.inp { background:#fff; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .spinner { width:18px; height:18px; border:2.5px solid #fff; border-top-color:transparent; border-radius:50%; animation:spin 0.6s linear infinite; display:inline-block; vertical-align:middle; margin-right:6px; }
+  </style>
+</head>
+<body class="flex items-start sm:items-center justify-center min-h-screen p-4 py-6 sm:py-4">
+
+  <!-- Logo / header above card -->
+  <div class="w-full max-w-md">
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center gap-2 bg-white/20 rounded-2xl px-5 py-3 mb-3">
+        <span class="text-2xl">🎓</span>
+        <div class="text-left">
+          <div class="text-white font-black text-xl tracking-tight">SSJU<span class="text-blue-200">.Connect</span></div>
+          <div class="text-blue-200 text-xs font-medium">Soban Singh Jeena University · Almora</div>
+        </div>
+      </div>
+      <p class="text-blue-100 text-sm">Campus Social & PYQ Vault — Your own account</p>
+    </div>
+
+    <!-- Card -->
+    <div class="card rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Tabs -->
+      <div class="flex border-b border-slate-100">
+        <button class="tab-btn active" id="tab-login" onclick="switchTab('login')">🔑 Login</button>
+        <button class="tab-btn" id="tab-signup" onclick="switchTab('signup')">✨ Sign Up</button>
+      </div>
+
+      <div class="p-6">
+        <!-- Alert box -->
+        <div id="alert-box" class="hidden alert"></div>
+
+        <!-- ── LOGIN FORM ── -->
+        <form id="login-form" onsubmit="doLogin(event)">
+          <div class="mb-4">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Username</label>
+            <input id="login-user" type="text" class="inp" placeholder="e.g. arjun_ssju" autocomplete="username" autocapitalize="none" required />
+          </div>
+          <div class="mb-5">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
+            <div class="relative">
+              <input id="login-pass" type="password" class="inp" placeholder="Enter your password" autocomplete="current-password" required />
+              <button type="button" onclick="togglePass('login-pass')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-lg">👁</button>
+            </div>
+          </div>
+          <button type="submit" class="btn" id="login-btn">Login to SSJU Connect</button>
+          <p class="text-center text-slate-500 text-sm mt-4">New here? <button type="button" onclick="switchTab('signup')" class="text-blue-700 font-semibold hover:underline">Create Account</button></p>
+        </form>
+
+        <!-- ── SIGNUP FORM ── -->
+        <form id="signup-form" class="hidden" onsubmit="doSignup(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Full Name *</label>
+              <input id="su-name" type="text" class="inp" placeholder="Your full name" required />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Username *</label>
+              <input id="su-user" type="text" class="inp" placeholder="e.g. rahul_bca" autocapitalize="none" required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Password * <span class="font-normal text-slate-400">(min 6 chars)</span></label>
+            <div class="relative">
+              <input id="su-pass" type="password" class="inp" placeholder="Choose a strong password" autocomplete="new-password" required />
+              <button type="button" onclick="togglePass('su-pass')" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-lg">👁</button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Faculty / Stream</label>
+              <select id="su-stream" class="inp">
+                <option value="science" data-name="Faculty of Science">🔬 B.Sc / M.Sc</option>
+                <option value="arts" data-name="Faculty of Arts & Humanities">📚 B.A / M.A</option>
+                <option value="commerce" data-name="Faculty of Commerce">📊 B.Com / M.Com</option>
+                <option value="bca_mca" data-name="Computer Applications & IT" selected>💻 BCA / MCA</option>
+                <option value="education" data-name="Faculty of Education">🎓 B.Ed / M.Ed</option>
+                <option value="management" data-name="Management Studies">📈 BBA / MBA</option>
+                <option value="law" data-name="Faculty of Law">⚖️ LL.B / LL.M</option>
+                <option value="yoga" data-name="Yoga & Alternative Therapy">🧘 Yoga</option>
+                <option value="visual_arts" data-name="Visual Arts & Performing Arts">🎨 B.F.A / Music</option>
+                <option value="pharmacy" data-name="Pharmacy & Medical Sciences">💊 B.Pharm</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Semester</label>
+              <select id="su-sem" class="inp">
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+                <option value="3">3rd Semester</option>
+                <option value="4">4th Semester</option>
+                <option value="5">5th Semester</option>
+                <option value="6">6th Semester</option>
+                <option value="7">7th Semester</option>
+                <option value="8">8th Semester</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Roll Number <span class="font-normal text-slate-400">(optional)</span></label>
+            <input id="su-roll" type="text" class="inp" placeholder="e.g. SSJU/2023/BCA/042" />
+          </div>
+          <button type="submit" class="btn" id="signup-btn">Create My Account →</button>
+          <p class="text-center text-slate-500 text-sm mt-4">Already have an account? <button type="button" onclick="switchTab('login')" class="text-blue-700 font-semibold hover:underline">Login</button></p>
+        </form>
+      </div>
+    </div>
+
+    <p class="text-center text-blue-200/70 text-xs mt-5">
+      SSJU Connect · Campus Social & PYQ Vault · Soban Singh Jeena University, Almora
+    </p>
+  </div>
+
+  <script>
+    // ── If already logged in, redirect ──────────────────────────────────────
+    (function () {
+      const token = localStorage.getItem('ssju_token');
+      if (token) {
+        fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + token } })
+          .then(r => r.json())
+          .then(d => { if (d.id) window.location.replace('/'); })
+          .catch(() => {});
+      }
+    })();
+
+    // ── Tab switch ───────────────────────────────────────────────────────────
+    function switchTab(tab) {
+      hideAlert();
+      document.getElementById('login-form').classList.toggle('hidden', tab !== 'login');
+      document.getElementById('signup-form').classList.toggle('hidden', tab !== 'signup');
+      document.getElementById('tab-login').classList.toggle('active', tab === 'login');
+      document.getElementById('tab-signup').classList.toggle('active', tab === 'signup');
+    }
+
+    // ── Alerts ───────────────────────────────────────────────────────────────
+    function showAlert(msg, type) {
+      const box = document.getElementById('alert-box');
+      box.className = 'alert ' + (type === 'ok' ? 'alert-ok' : 'alert-err');
+      box.textContent = msg;
+      box.classList.remove('hidden');
+    }
+    function hideAlert() {
+      document.getElementById('alert-box').classList.add('hidden');
+    }
+
+    // ── Toggle password visibility ───────────────────────────────────────────
+    function togglePass(id) {
+      const inp = document.getElementById(id);
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+    }
+
+    // ── Loading state helper ─────────────────────────────────────────────────
+    function setLoading(btnId, loading) {
+      const btn = document.getElementById(btnId);
+      btn.disabled = loading;
+      btn.innerHTML = loading
+        ? '<span class="spinner"></span>Please wait...'
+        : (btnId === 'login-btn' ? 'Login to SSJU Connect' : 'Create My Account →');
+    }
+
+    // ── LOGIN ────────────────────────────────────────────────────────────────
+    async function doLogin(e) {
+      e.preventDefault();
+      hideAlert();
+      const username = document.getElementById('login-user').value.trim();
+      const password = document.getElementById('login-pass').value;
+      if (!username || !password) return showAlert('Please fill in all fields.', 'err');
+      setLoading('login-btn', true);
+      try {
+        const r = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await r.json();
+        if (data.success) {
+          localStorage.setItem('ssju_token', data.token);
+          localStorage.setItem('ssju_user', JSON.stringify(data.user));
+          showAlert('✅ Login successful! Redirecting...', 'ok');
+          setTimeout(() => { window.location.replace('/'); }, 700);
+        } else {
+          showAlert('❌ ' + (data.error || 'Login failed.'), 'err');
+          setLoading('login-btn', false);
+        }
+      } catch (err) {
+        showAlert('❌ Network error. Is the server running?', 'err');
+        setLoading('login-btn', false);
+      }
+    }
+
+    // ── SIGNUP ───────────────────────────────────────────────────────────────
+    async function doSignup(e) {
+      e.preventDefault();
+      hideAlert();
+      const name = document.getElementById('su-name').value.trim();
+      const username = document.getElementById('su-user').value.trim();
+      const password = document.getElementById('su-pass').value;
+      const streamEl = document.getElementById('su-stream');
+      const stream = streamEl.value;
+      const streamName = streamEl.options[streamEl.selectedIndex].getAttribute('data-name');
+      const semester = parseInt(document.getElementById('su-sem').value);
+      const rollNo = document.getElementById('su-roll').value.trim();
+
+      if (!name || !username || !password) return showAlert('Please fill in Name, Username, and Password.', 'err');
+      if (username.length < 3) return showAlert('Username must be at least 3 characters.', 'err');
+      if (password.length < 6) return showAlert('Password must be at least 6 characters.', 'err');
+      if (/\s/.test(username)) return showAlert('Username cannot contain spaces.', 'err');
+
+      setLoading('signup-btn', true);
+      try {
+        const r = await fetch('/api/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, username, password, stream, streamName, semester, rollNo })
+        });
+        const data = await r.json();
+        if (data.success) {
+          localStorage.setItem('ssju_token', data.token);
+          localStorage.setItem('ssju_user', JSON.stringify(data.user));
+          showAlert('🎉 Account created! Welcome, ' + data.user.name + '!', 'ok');
+          setTimeout(() => { window.location.replace('/'); }, 900);
+        } else {
+          showAlert('❌ ' + (data.error || 'Signup failed.'), 'err');
+          setLoading('signup-btn', false);
+        }
+      } catch (err) {
+        showAlert('❌ Network error. Is the server running?', 'err');
+        setLoading('signup-btn', false);
+      }
+    }
+  </script>
+</body>
+</html>

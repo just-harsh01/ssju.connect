@@ -1,7 +1,7 @@
 /**
  * SSJU Connect - Standalone Application Bundle
  * Soban Singh Jeena University Campus Social & PYQ Vault
- * Bundled for 100% compatibility across file://, localhost, and live public hosts.
+ * Authenticated same-origin frontend for the Node.js server.
  */
 
 (function () {
@@ -17,8 +17,8 @@
       code: "B.Sc / M.Sc",
       icon: "🔬",
       description: "Physics, Chemistry, Mathematics, Botany, Zoology, Geology, Statistics, Biotechnology & Forestry.",
-      studentCount: 2450,
-      papersCount: 78,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-emerald-600 to-teal-700",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -28,8 +28,8 @@
       code: "B.A / M.A",
       icon: "📚",
       description: "Hindi, English, Sanskrit, History, Political Science, Sociology, Geography, Economics, Psychology & Journalism.",
-      studentCount: 3100,
-      papersCount: 92,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-rose-600 to-pink-700",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -39,8 +39,8 @@
       code: "B.Com / M.Com",
       icon: "📊",
       description: "Corporate Accounting, Auditing, Financial Management, Taxation, Banking, Business Economics & E-Commerce.",
-      studentCount: 1680,
-      papersCount: 54,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-amber-600 to-orange-700",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -50,8 +50,8 @@
       code: "BCA / MCA / PGDCA",
       icon: "💻",
       description: "Programming, Data Structures, Web Technologies, Database Systems, Software Engineering, AI & Python.",
-      studentCount: 1220,
-      papersCount: 46,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-blue-600 to-indigo-700",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -61,8 +61,8 @@
       code: "B.Ed / M.Ed",
       icon: "🎓",
       description: "Teacher Education, Philosophical & Sociological Foundations, Educational Psychology, Curriculum & Pedagogy.",
-      studentCount: 920,
-      papersCount: 38,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-sky-600 to-cyan-700",
       semesters: [1, 2, 3, 4]
     },
@@ -72,8 +72,8 @@
       code: "BBA / MBA",
       icon: "📈",
       description: "Business Administration, Marketing Strategy, Financial Management, Human Resource & Tourism Management.",
-      studentCount: 840,
-      papersCount: 32,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-purple-600 to-violet-800",
       semesters: [1, 2, 3, 4]
     },
@@ -83,8 +83,8 @@
       code: "LL.B / LL.M",
       icon: "⚖️",
       description: "Constitutional Law of India, Criminal Jurisprudence, Civil Code, Law of Torts, Evidence Act & Moot Courts.",
-      studentCount: 610,
-      papersCount: 26,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-slate-700 to-zinc-900",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -94,8 +94,8 @@
       code: "B.A / B.Sc & M.A / M.Sc (Yoga)",
       icon: "🧘",
       description: "Yogic Philosophy, Patanjali Yoga Sutras, Naturopathy, Asanas, Pranayama, Human Anatomy & Wellness Science.",
-      studentCount: 520,
-      papersCount: 20,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-lime-600 to-emerald-800",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -105,8 +105,8 @@
       code: "B.F.A / M.F.A & Music",
       icon: "🎨",
       description: "Fine Arts, Painting, Sculpture, Traditional Folk Art (Aipan of Kumaon), Classical Vocal & Instrumental Music.",
-      studentCount: 390,
-      papersCount: 16,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-fuchsia-600 to-pink-800",
       semesters: [1, 2, 3, 4, 5, 6]
     },
@@ -116,8 +116,8 @@
       code: "B.Pharm / D.Pharm",
       icon: "💊",
       description: "Pharmaceutics, Pharmacology, Pharmacognosy, Pharmaceutical Chemistry, Biochemistry & Clinical Trials.",
-      studentCount: 480,
-      papersCount: 22,
+      studentCount: 0,
+      papersCount: 0,
       color: "from-teal-600 to-cyan-800",
       semesters: [1, 2, 3, 4, 5, 6, 7, 8]
     }
@@ -141,302 +141,12 @@
     downvotedPosts: []
   };
 
-  const INITIAL_POSTS = [
-    {
-      id: "post_1",
-      author: {
-        name: "Pooja Bisht",
-        username: "pooja_b",
-        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-        stream: "bca_mca",
-        streamLabel: "BCA - 5th Sem",
-        isVerifiedStudent: true
-      },
-      title: "How to prepare for Data Structures & Algorithms for upcoming campus placement drives?",
-      content: "SSJU Almora training and placement cell announced that technical recruiters are visiting next semester. For 2nd and 3rd year students in Computer Applications and Sciences, what specific topics in DSA should we prioritize? Should we focus on LeetCode Top 150 or Striver's SDE sheet? Also, do they ask core OS and DBMS questions in round 1 technical interview?",
-      category: "Doubt / Question",
-      streamId: "bca_mca",
-      tags: ["Placements", "DSA", "CampusHiring", "SSJU"],
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
-      upvotes: 42,
-      downvotes: 1,
-      createdAt: "2026-10-12T10:30:00Z",
-      comments: [
-        {
-          id: "c_1",
-          author: {
-            name: "Rohit Joshi",
-            username: "rohit_j",
-            avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&q=80",
-            streamLabel: "Alumni / Software Engineer"
-          },
-          content: "From my experience, Striver's A2Z DSA sheet is solid for campus placements. Ensure you master Binary Trees, Graphs (BFS/DFS), and Dynamic Programming basics. For DBMS, normalize tables up to BCNF and know SQL indexing!",
-          upvotes: 18,
-          createdAt: "2026-10-12T11:45:00Z"
-        },
-        {
-          id: "c_2",
-          author: {
-            name: "Dr. K. S. Rawat",
-            username: "rawat_faculty",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
-            streamLabel: "Faculty - Dept of Computer Applications"
-          },
-          content: "Good question Pooja. The department is also organizing a 3-day hands-on workshop on Mock Technical Interviews in the Central Seminar Hall next Wednesday. Attendance is highly encouraged.",
-          upvotes: 24,
-          createdAt: "2026-10-12T14:10:00Z"
-        }
-      ]
-    },
-    {
-      id: "post_2",
-      author: {
-        name: "Aditya Pant",
-        username: "aditya_sc",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-        stream: "science",
-        streamLabel: "B.Sc Physics - 4th Sem",
-        isVerifiedStudent: true
-      },
-      title: "Glimpse of today's Astronomy Club telescope setup at Almora Upper Ground! 🌌🔭",
-      content: "The sky was crystal clear tonight over the Kumaon hills! The Physics Society & Astronomy Club set up the 8-inch reflector telescope near the SSJU Administrative block. We got spectacular views of Saturn's rings and Jupiter's Galilean moons. Huge shoutout to everyone who braved the cold breeze to join us. Next stargazing session is scheduled during the upcoming meteor shower!",
-      category: "Campus Events",
-      streamId: "science",
-      tags: ["AstronomyClub", "CampusLife", "Almora", "PhysicsSociety"],
-      image: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=80",
-      upvotes: 68,
-      downvotes: 0,
-      createdAt: "2026-10-11T20:15:00Z",
-      comments: [
-        {
-          id: "c_3",
-          author: {
-            name: "Deepa Mehta",
-            username: "deepa_m",
-            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-            streamLabel: "B.A. English - 2nd Sem"
-          },
-          content: "It was magical! The view of Saturn was so sharp. Please do another session next Saturday so students from lower campus hostels can also reach on time.",
-          upvotes: 9,
-          createdAt: "2026-10-11T21:00:00Z"
-        }
-      ]
-    },
-    {
-      id: "post_3",
-      author: {
-        name: "Neha Tiwari",
-        username: "neha_comm",
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
-        stream: "commerce",
-        streamLabel: "B.Com Honours - 5th Sem",
-        isVerifiedStudent: true
-      },
-      title: "Notice regarding Central Library book renewal & Extended hours for Mid-Term Exams",
-      content: "Official update from University Central Library: Library reading halls will now remain open until 9:00 PM on weekdays starting next Monday due to mid-semester exams. Also, students can renew up to 4 textbooks simultaneously through the online portal without library fine. Make sure to carry your university ID card for biometric gate entry.",
-      category: "Official Announcement",
-      streamId: "commerce",
-      tags: ["CentralLibrary", "Exams2026", "CampusNotice", "SSJU"],
-      image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
-      upvotes: 53,
-      downvotes: 2,
-      createdAt: "2026-10-10T09:00:00Z",
-      comments: [
-        {
-          id: "c_4",
-          author: {
-            name: "Virendra Singh",
-            username: "viren_bca",
-            avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
-            streamLabel: "BCA - 3rd Sem"
-          },
-          content: "Much needed! The WiFi connection in the 2nd-floor digital section has also been upgraded to high-speed fiber.",
-          upvotes: 7,
-          createdAt: "2026-10-10T10:20:00Z"
-        }
-      ]
-    },
-    {
-      id: "post_4",
-      author: {
-        name: "Manoj Bhatt",
-        username: "manoj_yoga",
-        avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
-        stream: "yoga",
-        streamLabel: "M.A. Yoga - 1st Sem",
-        isVerifiedStudent: true
-      },
-      title: "Morning Sunrise Pranayama & Hatha Yoga Camp on University Lawn this Sunday 🧘‍♂️",
-      content: "The Department of Yoga & Alternative Therapy is organizing a sunrise practical meditation and Surya Namaskar session this Sunday at 6:30 AM. Students from all faculties (Science, Arts, Commerce, Law, B.Ed) are welcome! Mats will be provided by the department.",
-      category: "Campus Events",
-      streamId: "yoga",
-      tags: ["YogaDepartment", "Wellness", "SSJUAlmora", "Health"],
-      image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80",
-      upvotes: 71,
-      downvotes: 0,
-      createdAt: "2026-10-09T14:20:00Z",
-      comments: [
-        {
-          id: "c_5",
-          author: {
-            name: "Siddharth Verma",
-            username: "sid_law",
-            avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80",
-            streamLabel: "LL.B - 2nd Sem"
-          },
-          content: "Count the Law faculty students in! Great initiative for relieving exam stress.",
-          upvotes: 8,
-          createdAt: "2026-10-09T16:12:00Z"
-        }
-      ]
-    }
-  ];
+  const INITIAL_POSTS = [];
 
-  const INITIAL_PAPERS = [
-    {
-      id: "paper_1",
-      title: "Data Structures and File Organization (BCA-301)",
-      subjectCode: "BCA-301",
-      streamId: "bca_mca",
-      streamName: "Computer Applications & IT",
-      semester: 3,
-      examYear: 2025,
-      examType: "End-Term Regular",
-      uploaderName: "Arjun Singh Negi",
-      uploaderStream: "BCA",
-      uploadedAt: "2026-09-18",
-      fileSize: "1.4 MB",
-      pages: 4,
-      downloadsCount: 184,
-      rating: 4.9,
-      description: "Official End-Term examination paper covering Stacks, Queues, Binary Trees, AVL Trees, Graphs, Sorting algorithms, and dynamic file indexing.",
-      tags: ["DSA", "DataStructures", "Semester3", "EndTerm2025"],
-      pdfDataUrl: null
-    },
-    {
-      id: "paper_2",
-      title: "Childhood and Growing Up (B.Ed Core Paper I)",
-      subjectCode: "BED-101",
-      streamId: "education",
-      streamName: "Faculty of Education",
-      semester: 1,
-      examYear: 2025,
-      examType: "End-Term Regular",
-      uploaderName: "Sunita Arya",
-      uploaderStream: "B.Ed",
-      uploadedAt: "2026-08-20",
-      fileSize: "1.2 MB",
-      pages: 4,
-      downloadsCount: 145,
-      rating: 4.8,
-      description: "Covers psychological development, Piaget's cognitive development theory, Vygotsky's socio-cultural theory, and adolescent learning in school environments.",
-      tags: ["BEd", "ChildPsychology", "Semester1", "Education"],
-      pdfDataUrl: null
-    },
-    {
-      id: "paper_3",
-      title: "Quantum Mechanics & Modern Physics (PHY-501)",
-      subjectCode: "PHY-501",
-      streamId: "science",
-      streamName: "Faculty of Science",
-      semester: 5,
-      examYear: 2024,
-      examType: "End-Term Regular",
-      uploaderName: "Aditya Pant",
-      uploaderStream: "B.Sc Physics",
-      uploadedAt: "2026-06-14",
-      fileSize: "1.7 MB",
-      pages: 5,
-      downloadsCount: 132,
-      rating: 4.9,
-      description: "Complete question paper including 1D Schrodinger wave equation, photoelectric effect, Compton effect, operator formalism, and hydrogen atom energy states.",
-      tags: ["Physics", "QuantumMechanics", "BSc", "Sem5"],
-      pdfDataUrl: null
-    },
-    {
-      id: "paper_4",
-      title: "Foundations of Yogic Sciences & Philosophy (YOG-101)",
-      subjectCode: "YOG-101",
-      streamId: "yoga",
-      streamName: "Yoga & Alternative Therapy",
-      semester: 1,
-      examYear: 2025,
-      examType: "End-Term Regular",
-      uploaderName: "Manoj Bhatt",
-      uploaderStream: "M.A. Yoga",
-      uploadedAt: "2026-07-10",
-      fileSize: "1.0 MB",
-      pages: 3,
-      downloadsCount: 118,
-      rating: 4.9,
-      description: "Questions on Patanjali Yoga Sutras, Ashtanga Yoga, Hatha Yoga Pradipika, subtle anatomy (Chakras and Nadis), and modern wellness science.",
-      tags: ["Yoga", "Philosophy", "Semester1", "SSJU"],
-      pdfDataUrl: null
-    },
-    {
-      id: "paper_5",
-      title: "Financial Accounting & Corporate Auditing (COM-302)",
-      subjectCode: "COM-302",
-      streamId: "commerce",
-      streamName: "Faculty of Commerce",
-      semester: 3,
-      examYear: 2025,
-      examType: "End-Term Regular",
-      uploaderName: "Neha Tiwari",
-      uploaderStream: "B.Com",
-      uploadedAt: "2026-05-30",
-      fileSize: "1.2 MB",
-      pages: 4,
-      downloadsCount: 88,
-      rating: 4.6,
-      description: "Corporate financial statements, partnership accounting, depreciation methodologies, goodwill valuation, and internal auditing guidelines.",
-      tags: ["Accounting", "Finance", "BCom", "Auditing"],
-      pdfDataUrl: null
-    },
-    {
-      id: "paper_6",
-      title: "Constitutional Law of India - Part I & II (LAW-101)",
-      subjectCode: "LAW-101",
-      streamId: "law",
-      streamName: "Faculty of Law",
-      semester: 1,
-      examYear: 2024,
-      examType: "End-Term Regular",
-      uploaderName: "Siddharth Verma",
-      uploaderStream: "LL.B",
-      uploadedAt: "2026-04-19",
-      fileSize: "1.5 MB",
-      pages: 4,
-      downloadsCount: 95,
-      rating: 4.8,
-      description: "Fundamental Rights (Articles 14 to 32), Directive Principles of State Policy, Preamble interpretations, writ petitions, and landmark Supreme Court judgments.",
-      tags: ["ConstitutionalLaw", "LLB", "Judgments", "Law"],
-      pdfDataUrl: null
-    },
-    {
-      id: "paper_7",
-      title: "History of Modern India (1757 - 1947) (HIST-201)",
-      subjectCode: "HIST-201",
-      streamId: "arts",
-      streamName: "Faculty of Arts & Humanities",
-      semester: 2,
-      examYear: 2025,
-      examType: "End-Term Regular",
-      uploaderName: "Deepa Mehta",
-      uploaderStream: "B.A. History",
-      uploadedAt: "2026-03-15",
-      fileSize: "1.1 MB",
-      pages: 3,
-      downloadsCount: 84,
-      rating: 4.7,
-      description: "Colonial rule, revolt of 1857, socio-religious reform movements, Indian National Congress formation, Gandhian movements, and independence.",
-      tags: ["History", "ModernIndia", "BA", "Sem2"],
-      pdfDataUrl: null
-    }
-  ];
+  const INITIAL_PAPERS = [];
 
   // ========================================================
-  // 2. STORAGE CONTROLLER
+  // 2. STORAGE & BACKEND API CONTROLLER
   // ========================================================
   const STORAGE_KEYS = {
     POSTS: 'ssju_connect_posts_v2',
@@ -444,6 +154,209 @@
     USER: 'ssju_connect_user_v2',
     SETTINGS: 'ssju_connect_settings_v1',
     STREAMS: 'ssju_connect_streams_v2'
+  };
+
+  // High-Capacity IndexedDB Engine for local PDF storage (No 5MB quota limit!)
+  const IDB_CONFIG = { name: 'SSJU_Connect_DB', version: 1, store: 'pdf_vault' };
+  function getIDB() {
+    return new Promise((resolve, reject) => {
+      try {
+        const req = indexedDB.open(IDB_CONFIG.name, IDB_CONFIG.version);
+        req.onupgradeneeded = () => req.result.createObjectStore(IDB_CONFIG.store);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+  async function savePdfToIDB(id, blobOrData) {
+    try {
+      const db = await getIDB();
+      return new Promise((resolve) => {
+        const tx = db.transaction(IDB_CONFIG.store, 'readwrite');
+        tx.objectStore(IDB_CONFIG.store).put(blobOrData, id);
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => resolve(false);
+      });
+    } catch (e) {
+      console.warn('IDB save failed:', e);
+      return false;
+    }
+  }
+  async function getPdfFromIDB(id) {
+    try {
+      const db = await getIDB();
+      return new Promise((resolve) => {
+        const tx = db.transaction(IDB_CONFIG.store, 'readonly');
+        const req = tx.objectStore(IDB_CONFIG.store).get(id);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => resolve(null);
+      });
+    } catch {
+      return null;
+    }
+  }
+
+  // REST API Client for Server.js Backend Engine
+  const API = {
+    isOnline: false,
+    token() { return localStorage.getItem('ssju_token') || ''; },
+    async request(url, options = {}) {
+      const token = this.token();
+      const headers = { ...(options.headers || {}) };
+      if (token) headers.Authorization = `Bearer ${token}`;
+      const response = await fetch(url, { ...options, headers, cache: options.cache || 'no-store' });
+      if (response.status === 401) {
+        localStorage.removeItem('ssju_token');
+        localStorage.removeItem('ssju_user');
+        this.isOnline = true;
+        window.location.replace('/login.html');
+        throw new Error('Your session expired. Please log in again.');
+      }
+      if (!response.ok) {
+        let message = 'Request failed.';
+        try { message = (await response.json()).error || message; } catch {}
+        throw new Error(message);
+      }
+      return response.status === 204 ? null : response.json();
+    },
+    async check() {
+      if (!window.location.protocol.startsWith('http')) {
+        this.isOnline = false;
+        return false;
+      }
+      try {
+        const res = await fetch('/api/status', { cache: 'no-store' });
+        if (res.ok) {
+          this.isOnline = true;
+          return true;
+        }
+      } catch (e) {
+        this.isOnline = false;
+      }
+      return false;
+    },
+    async syncAll() {
+      if (!this.isOnline && !await this.check()) return false;
+      if (!this.token()) {
+        window.location.replace('/login.html');
+        return false;
+      }
+      try {
+        const [posts, papers, user, streams] = await Promise.all([
+          this.request('/api/posts'),
+          this.request('/api/papers'),
+          this.request('/api/auth/me'),
+          this.request('/api/streams')
+        ]);
+        if (Array.isArray(posts)) safeSet(STORAGE_KEYS.POSTS, posts);
+        if (Array.isArray(papers)) safeSet(STORAGE_KEYS.PAPERS, papers);
+        if (Array.isArray(streams)) safeSet(STORAGE_KEYS.STREAMS, streams);
+        if (user && user.name) {
+          safeSet(STORAGE_KEYS.USER, user);
+          localStorage.setItem('ssju_user', JSON.stringify(user));
+        }
+        return true;
+      } catch (err) {
+        console.warn('Backend sync failed, using local storage cache:', err);
+        return false;
+      }
+    },
+    async uploadFile(file) {
+      if (!this.isOnline) return null;
+      return this.request('/api/upload', {
+          method: 'POST',
+          headers: {
+            'x-filename': encodeURIComponent(file.name),
+            'content-type': 'application/pdf'
+          },
+          body: file
+        });
+    },
+    async savePaper(paper) {
+      const created = await this.request('/api/papers', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(paper)
+      });
+      const papers = safeGet(STORAGE_KEYS.PAPERS, []);
+      papers.unshift(created);
+      safeSet(STORAGE_KEYS.PAPERS, papers);
+      const user = safeGet(STORAGE_KEYS.USER, INITIAL_USER);
+      user.reputation = (user.reputation || 0) + 25;
+      if (!user.badges.includes('PYQ Donor')) user.badges.push('PYQ Donor');
+      safeSet(STORAGE_KEYS.USER, user);
+      return created;
+    },
+    async savePost(post) {
+      const created = await this.request('/api/posts', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(post)
+      });
+      const posts = safeGet(STORAGE_KEYS.POSTS, []);
+      posts.unshift(created);
+      safeSet(STORAGE_KEYS.POSTS, posts);
+      const user = safeGet(STORAGE_KEYS.USER, INITIAL_USER);
+      user.reputation = (user.reputation || 0) + 5;
+      safeSet(STORAGE_KEYS.USER, user);
+      return created;
+    },
+    async votePost(id, type) {
+      const result = await this.request(`/api/posts/${encodeURIComponent(id)}/vote`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type })
+      });
+      const posts = safeGet(STORAGE_KEYS.POSTS, []);
+      const index = posts.findIndex(post => post.id === id);
+      if (index >= 0) posts[index] = result.post;
+      safeSet(STORAGE_KEYS.POSTS, posts);
+      if (result.user) safeSet(STORAGE_KEYS.USER, result.user);
+      return result;
+    },
+    async addComment(id, comment) {
+      const created = await this.request(`/api/posts/${encodeURIComponent(id)}/comment`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: comment.content })
+      });
+      const posts = safeGet(STORAGE_KEYS.POSTS, []);
+      const post = posts.find(item => item.id === id);
+      if (post) { post.comments = post.comments || []; post.comments.push(created); }
+      safeSet(STORAGE_KEYS.POSTS, posts);
+      return created;
+    },
+    async updateUser(userUpdates) {
+      const result = await this.request('/api/user', {
+        method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(userUpdates)
+      });
+      if (result.user) {
+        safeSet(STORAGE_KEYS.USER, result.user);
+        localStorage.setItem('ssju_user', JSON.stringify(result.user));
+      }
+      return result.user;
+    },
+    async deletePost(id) {
+      await this.request(`/api/posts/${encodeURIComponent(id)}`, { method: 'DELETE' });
+      safeSet(STORAGE_KEYS.POSTS, safeGet(STORAGE_KEYS.POSTS, []).filter(post => post.id !== id));
+    },
+    async downloadPaper(id) {
+      const paper = await this.request(`/api/papers/${encodeURIComponent(id)}/download`, { method: 'POST' });
+      const papers = safeGet(STORAGE_KEYS.PAPERS, []);
+      const index = papers.findIndex(item => item.id === id);
+      if (index >= 0) papers[index] = paper;
+      safeSet(STORAGE_KEYS.PAPERS, papers);
+      return paper;
+    },
+    async saveStream(streamData) {
+      const created = await this.request('/api/streams', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(streamData)
+      });
+      const streams = safeGet(STORAGE_KEYS.STREAMS, []);
+      streams.push(created);
+      safeSet(STORAGE_KEYS.STREAMS, streams);
+      return created;
+    },
+    async logout() {
+      try { if (this.token()) await this.request('/api/auth/logout', { method: 'POST' }); } catch {}
+      localStorage.removeItem('ssju_token');
+      localStorage.removeItem('ssju_user');
+      window.location.replace('/login.html');
+    }
   };
 
   function safeGet(key, fallback) {
@@ -458,7 +371,22 @@
   function safeSet(key, value) {
     try {
       localStorage.setItem(key, JSON.stringify(value));
-    } catch (e) {}
+    } catch (e) {
+      console.warn(`Local storage quota reached for ${key}:`, e);
+    }
+  }
+
+  function escapeHtml(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, ch => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[ch]);
+  }
+
+  function safeImageUrl(value, fallback = '') {
+    if (typeof value !== 'string') return fallback;
+    if (/^https?:\/\//i.test(value)) return value;
+    if (/^data:image\/(png|jpeg|gif|webp);base64,/i.test(value)) return value;
+    return fallback;
   }
 
   function initStorage() {
@@ -503,6 +431,9 @@
     const post = posts.find(p => p.id === postId);
     if (!post) return { posts, user };
 
+    if (!user.upvotedPosts) user.upvotedPosts = [];
+    if (!user.downvotedPosts) user.downvotedPosts = [];
+
     const upIndex = user.upvotedPosts.indexOf(postId);
     const downIndex = user.downvotedPosts.indexOf(postId);
 
@@ -546,10 +477,12 @@
     return newComment;
   }
 
-  function getPapers() { return safeGet(STORAGE_KEYS.PAPERS, INITIAL_PAPERS); }
+  function getPapers() {
+    return safeGet(STORAGE_KEYS.PAPERS, INITIAL_PAPERS).filter(paper => paper && (paper.fileUrl || paper.localPdfKey || (typeof paper.pdfDataUrl === 'string' && /^data:application\/pdf;base64,/i.test(paper.pdfDataUrl))));
+  }
   function savePaper(newPaper) {
     const papers = getPapers();
-    const created = { id: 'paper_' + Date.now(), uploadedAt: new Date().toISOString().split('T')[0], downloadsCount: 0, rating: 5.0, pages: 3, fileSize: '1.2 MB', ...newPaper };
+    const created = { id: 'paper_' + Date.now(), uploadedAt: new Date().toISOString().split('T')[0], downloadsCount: 0, ...newPaper };
     papers.unshift(created);
     safeSet(STORAGE_KEYS.PAPERS, papers);
     const user = getUser();
@@ -571,8 +504,32 @@
   function getUser() { return safeGet(STORAGE_KEYS.USER, INITIAL_USER); }
   function updateUser(updatedFields) {
     const current = getUser();
+    const oldName = current.name;
+    const oldUsername = current.username;
     const merged = { ...current, ...updatedFields };
     safeSet(STORAGE_KEYS.USER, merged);
+
+    // Keep posts and papers author synced locally
+    if (updatedFields.name && updatedFields.name !== oldName) {
+      const papers = getPapers();
+      papers.forEach(p => {
+        if (p.uploaderName === oldName) p.uploaderName = updatedFields.name;
+      });
+      safeSet(STORAGE_KEYS.PAPERS, papers);
+    }
+
+    if (updatedFields.username && updatedFields.username !== oldUsername) {
+      const posts = getPosts();
+      posts.forEach(p => {
+        if (p.author && p.author.username === oldUsername) {
+          p.author.name = updatedFields.name || p.author.name;
+          p.author.username = updatedFields.username;
+          if (updatedFields.avatar) p.author.avatar = updatedFields.avatar;
+        }
+      });
+      safeSet(STORAGE_KEYS.POSTS, posts);
+    }
+
     return merged;
   }
   function toggleBookmark(itemType, itemId) {
@@ -604,15 +561,6 @@
     safeSet(STORAGE_KEYS.SETTINGS, merged);
     return merged;
   }
-  function resetAllData() {
-    localStorage.removeItem(STORAGE_KEYS.POSTS);
-    localStorage.removeItem(STORAGE_KEYS.PAPERS);
-    localStorage.removeItem(STORAGE_KEYS.USER);
-    localStorage.removeItem(STORAGE_KEYS.SETTINGS);
-    localStorage.removeItem(STORAGE_KEYS.STREAMS);
-    initStorage();
-  }
-
   // ========================================================
   // 3. HELPERS: PDF & SHARE
   // ========================================================
@@ -625,144 +573,27 @@
     });
   }
 
-  function generateQuestionPaperPdf(paper) {
-    return new Promise((resolve) => {
-      const { jsPDF } = window.jspdf || {};
-      if (!jsPDF) {
-        const htmlContent = `
-          <!DOCTYPE html><html><head><title>${paper.subjectCode} - ${paper.title}</title>
-          <style>body { font-family: 'Times New Roman', serif; padding: 40px; color: #111; line-height: 1.5; }
-          .header { text-align: center; border-bottom: 2px solid #222; padding-bottom: 12px; margin-bottom: 20px; }
-          .univ-name { font-size: 20pt; font-weight: bold; text-transform: uppercase; }
-          .meta-table { width: 100%; margin: 15px 0; border-collapse: collapse; font-size: 11pt; }
-          .section-title { font-weight: bold; font-size: 12pt; text-align: center; margin: 20px 0 10px; border-bottom: 1px solid #ddd; }
-          .question-item { margin-bottom: 14px; font-size: 11pt; display: flex; justify-content: space-between; }</style></head>
-          <body>
-            <div class="header">
-              <div class="univ-name">Soban Singh Jeena University, Almora</div>
-              <div style="font-size: 13pt; margin-top: 4px; font-weight: bold;">${paper.streamName || 'Examination Vault'}</div>
-              <div style="font-size: 11pt; margin-top: 6px;">${paper.examType} Examination - ${paper.examYear}</div>
-            </div>
-            <table class="meta-table"><tr><td><strong>Course:</strong> ${paper.title}</td><td style="text-align: right;"><strong>Subject Code:</strong> ${paper.subjectCode}</td></tr>
-            <tr><td><strong>Semester:</strong> ${paper.semester}</td><td style="text-align: right;"><strong>Max Marks:</strong> 100</td></tr></table>
-            <div class="section-title">SECTION A &mdash; (Short Answer Questions)</div>
-            <div class="question-item"><div>1. Define core principles, fundamental scope, and modern applications of ${paper.subjectCode}.</div><div>[10]</div></div>
-            <div class="section-title">SECTION B &mdash; (Descriptive Analytical Questions)</div>
-            <div class="question-item"><div>2. Formulate an optimized technical specification with step-by-step mathematical proofs.</div><div>[20]</div></div>
-          </body></html>`;
-        const blob = new Blob([htmlContent], { type: 'text/html' });
-        resolve({ dataUrl: URL.createObjectURL(blob), isHtmlFallback: true });
-        return;
-      }
-
-      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const margin = 18;
-      const contentWidth = pageWidth - (margin * 2);
-
-      doc.setDrawColor(30, 58, 138);
-      doc.setLineWidth(0.8);
-      doc.rect(10, 10, pageWidth - 20, 277);
-
-      doc.setFont('times', 'bold');
-      doc.setFontSize(15);
-      doc.setTextColor(30, 58, 138);
-      doc.text("SOBAN SINGH JEENA UNIVERSITY, ALMORA", pageWidth / 2, 22, { align: 'center' });
-      doc.setFontSize(11);
-      doc.setTextColor(75, 85, 99);
-      doc.text((paper.streamName || '').toUpperCase(), pageWidth / 2, 28, { align: 'center' });
-      doc.setFontSize(12);
-      doc.setTextColor(17, 24, 39);
-      doc.text(`${(paper.examType || 'Regular').toUpperCase()} EXAMINATION - ${paper.examYear}`, pageWidth / 2, 34, { align: 'center' });
-
-      doc.line(margin, 38, pageWidth - margin, 38);
-      doc.setFontSize(10);
-      doc.text(`Subject: ${paper.title}`, margin, 44);
-      doc.text(`Code: ${paper.subjectCode}`, pageWidth - margin, 44, { align: 'right' });
-      doc.setFont('times', 'normal');
-      doc.text(`Semester: ${paper.semester} | Time: 3 Hours`, margin, 50);
-      doc.text(`Max Marks: 100`, pageWidth - margin, 50, { align: 'right' });
-
-      doc.setFont('times', 'bold');
-      doc.setFontSize(11);
-      doc.text("SECTION A (Short Answer Type - 30 Marks)", pageWidth / 2, 65, { align: 'center' });
-      doc.setFont('times', 'normal');
-      doc.setFontSize(9.5);
-      doc.text(`1. Explain fundamental theorems and key properties of ${paper.subjectCode}.`, margin, 75);
-      doc.text(`2. Compare analytical modeling versus experimental verification.`, margin, 85);
-      doc.text(`3. Illustrate asymptotic time-space bounds with diagrams.`, margin, 95);
-
-      doc.setFont('times', 'bold');
-      doc.text("SECTION B (Analytical & Case Study - 70 Marks)", pageWidth / 2, 115, { align: 'center' });
-      doc.setFont('times', 'normal');
-      doc.text(`4. Comprehensive analysis of ${paper.title}: Formulate step-by-step methodologies.`, margin, 125);
-      doc.text(`5. Design high-throughput, fault-tolerant architectures under variable loads.`, margin, 140);
-
-      doc.setFont('times', 'italic');
-      doc.setFontSize(8);
-      doc.setTextColor(156, 163, 175);
-      doc.text(`Official Academic Archive • Soban Singh Jeena University, Almora`, pageWidth / 2, 280, { align: 'center' });
-
-      const pdfBlob = doc.output('blob');
-      resolve({ dataUrl: URL.createObjectURL(pdfBlob), blob: pdfBlob, isHtmlFallback: false });
-    });
+  async function getPaperFileUrl(paper) {
+    if (typeof paper.fileUrl === 'string' && /^\/uploads\/[a-f0-9]{36}\.pdf$/i.test(paper.fileUrl)) return paper.fileUrl;
+    if (paper.pdfDataUrl && /^data:application\/pdf;base64,/i.test(paper.pdfDataUrl)) return paper.pdfDataUrl;
+    if (!paper.id) return null;
+    const stored = await getPdfFromIDB(paper.id);
+    if (stored instanceof Blob && stored.type === 'application/pdf') return URL.createObjectURL(stored);
+    if (typeof stored === 'string' && /^data:application\/pdf;base64,/i.test(stored)) return stored;
+    return null;
   }
 
   async function triggerPaperDownload(paper) {
-    let downloadUrl = paper.pdfDataUrl;
-    if (!downloadUrl) {
-      const generated = await generateQuestionPaperPdf(paper);
-      downloadUrl = generated.dataUrl;
-    }
-    const filename = `SSJU_${paper.streamId.toUpperCase()}_${paper.subjectCode.replace(/[^a-zA-Z0-9_-]/g, '_')}_${paper.examYear}.pdf`;
+    const fileUrl = await getPaperFileUrl(paper);
+    if (!fileUrl) throw new Error('The original PDF is unavailable.');
+    const filename = `SSJU_${String(paper.streamId || 'campus').replace(/[^a-z0-9_-]/gi, '_')}_${String(paper.subjectCode || 'paper').replace(/[^a-z0-9_-]/gi, '_')}_${paper.examYear || ''}.pdf`;
     const link = document.createElement('a');
-    link.href = downloadUrl;
+    link.href = paper.fileUrl ? `${fileUrl}?download=1` : fileUrl;
     link.download = filename;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }
-
-  function generateQrCodeSvg(text, size = 180) {
-    const hash = Array.from(text).reduce((acc, char) => (acc * 31 + char.charCodeAt(0)) | 0, 0);
-    const gridSize = 25;
-    const cellSize = size / gridSize;
-    let rects = [];
-
-    function addFinder(xStart, yStart) {
-      for (let r = 0; r < 7; r++) {
-        for (let c = 0; c < 7; c++) {
-          if (r === 0 || r === 6 || c === 0 || c === 6 || (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
-            rects.push(`<rect x="${(xStart + c) * cellSize}" y="${(yStart + r) * cellSize}" width="${cellSize}" height="${cellSize}" fill="#1e3a8a" rx="1.5"/>`);
-          }
-        }
-      }
-    }
-    addFinder(0, 0);
-    addFinder(gridSize - 7, 0);
-    addFinder(0, gridSize - 7);
-
-    let seed = Math.abs(hash);
-    for (let r = 0; r < gridSize; r++) {
-      for (let c = 0; c < gridSize; c++) {
-        if ((r < 8 && c < 8) || (r < 8 && c >= gridSize - 8) || (r >= gridSize - 8 && c < 8)) continue;
-        seed = (seed * 9301 + 49297) % 233280;
-        if ((seed / 233280) > 0.48) {
-          rects.push(`<rect x="${c * cellSize}" y="${r * cellSize}" width="${cellSize * 0.9}" height="${cellSize * 0.9}" fill="#334155" rx="1"/>`);
-        }
-      }
-    }
-
-    const centerRadius = cellSize * 2.4;
-    const centerCoord = size / 2;
-    return `
-      <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg" class="rounded-xl bg-white p-2 shadow-inner border border-slate-200">
-        <rect width="100%" height="100%" fill="#ffffff" rx="8" />
-        ${rects.join('')}
-        <circle cx="${centerCoord}" cy="${centerCoord}" r="${centerRadius}" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
-        <text x="${centerCoord}" y="${centerCoord + 4}" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e3a8a" text-anchor="middle">SSJU</text>
-      </svg>
-    `;
+    if (fileUrl.startsWith('blob:')) setTimeout(() => URL.revokeObjectURL(fileUrl), 30000);
   }
 
   async function copyToClipboard(text) {
@@ -832,10 +663,12 @@
 
     const toast = document.createElement('div');
     toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-xl text-sm font-medium ${bgColors[type] || bgColors.info} animate-toast`;
-    toast.innerHTML = `
-      <span class="flex-shrink-0 w-5 h-5 flex items-center justify-center font-bold text-base rounded-full bg-white/20">${icons[type] || '•'}</span>
-      <span>${message}</span>
-    `;
+    const icon = document.createElement('span');
+    icon.className = 'flex-shrink-0 w-5 h-5 flex items-center justify-center font-bold text-base rounded-full bg-white/20';
+    icon.textContent = icons[type] || '•';
+    const text = document.createElement('span');
+    text.textContent = message;
+    toast.append(icon, text);
     container.appendChild(toast);
     setTimeout(() => {
       toast.style.opacity = '0';
@@ -865,13 +698,9 @@
 
     const rightSidebar = document.getElementById('rightSidebarArea');
     if (rightSidebar) {
-      if (state.currentView === 'home' || state.currentView === 'papers') {
-        rightSidebar.classList.remove('hidden');
-        rightSidebar.classList.add('lg:block');
-      } else {
-        rightSidebar.classList.add('hidden');
-        rightSidebar.classList.remove('lg:block');
-      }
+      const showDesktopSidebar = state.currentView === 'home' || state.currentView === 'papers';
+      rightSidebar.classList.add('hidden');
+      rightSidebar.classList.toggle('xl:block', showDesktopSidebar);
     }
 
     switch (state.currentView) {
@@ -892,7 +721,7 @@
     const avatarImg = document.getElementById('headerUserAvatar');
     const avatarName = document.getElementById('headerUserName');
     const avatarStream = document.getElementById('headerUserStream');
-    if (avatarImg) avatarImg.src = user.avatar;
+    if (avatarImg) avatarImg.src = safeImageUrl(user.avatar, 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100');
     if (avatarName) avatarName.textContent = user.name;
     if (avatarStream) avatarStream.textContent = user.streamName || 'SSJU Student';
   }
@@ -946,15 +775,15 @@
     let streamBannerHtml = '';
     if (activeStream) {
       streamBannerHtml = `
-        <div class="mb-4 bg-gradient-to-r ${activeStream.color} text-white p-5 rounded-2xl shadow-sm flex items-center justify-between">
+        <div class="mb-4 bg-gradient-to-r ${escapeHtml(activeStream.color)} text-white p-5 rounded-2xl shadow-sm flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <span class="text-4xl p-2 bg-white/20 rounded-xl backdrop-blur-sm">${activeStream.icon}</span>
+            <span class="text-4xl p-2 bg-white/20 rounded-xl backdrop-blur-sm">${escapeHtml(activeStream.icon)}</span>
             <div>
               <div class="flex items-center gap-2">
-                <h2 class="text-xl font-bold">${activeStream.name}</h2>
-                <span class="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">${activeStream.code}</span>
+                <h2 class="text-xl font-bold">${escapeHtml(activeStream.name)}</h2>
+                <span class="text-xs bg-white/20 px-2.5 py-0.5 rounded-full font-medium">${escapeHtml(activeStream.code)}</span>
               </div>
-              <p class="text-xs text-white/80 mt-1 max-w-xl">${activeStream.description}</p>
+              <p class="text-xs text-white/80 mt-1 max-w-xl">${escapeHtml(activeStream.description)}</p>
             </div>
           </div>
           <button id="clearStreamFilterBtn" class="flex-shrink-0 text-xs bg-white text-slate-800 font-semibold px-3 py-1.5 rounded-lg hover:bg-slate-100 transition shadow">
@@ -970,7 +799,7 @@
       <!-- Ask Question / Create Post Bar -->
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 mb-4 shadow-sm">
         <div class="flex items-center gap-3">
-          <img src="${user.avatar}" alt="${user.name}" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700" />
+          <img src="${escapeHtml(safeImageUrl(user.avatar))}" alt="${escapeHtml(user.name)}" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700" />
           <button id="openQuickPostBtn" class="flex-grow text-left bg-slate-100 hover:bg-slate-200/70 dark:bg-slate-800 dark:hover:bg-slate-700/70 text-slate-500 dark:text-slate-400 text-sm px-4 py-2.5 rounded-full transition border border-transparent hover:border-slate-300 dark:hover:border-slate-600">
             What do you want to ask or share about SSJU?
           </button>
@@ -1004,7 +833,7 @@
         <div class="hidden sm:flex items-center gap-2">
           <select id="feedStreamDropdown" class="text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-slate-700 dark:text-slate-300">
             <option value="" ${!state.selectedStreamId ? 'selected' : ''}>All Faculties</option>
-            ${streams.map(s => `<option value="${s.id}" ${state.selectedStreamId === s.id ? 'selected' : ''}>${s.name}</option>`).join('')}
+            ${streams.map(s => `<option value="${escapeHtml(s.id)}" ${state.selectedStreamId === s.id ? 'selected' : ''}>${escapeHtml(s.name)}</option>`).join('')}
           </select>
         </div>
       </div>
@@ -1024,83 +853,83 @@
     const isBookmarked = (user.bookmarks || []).includes(`post_${post.id}`);
 
     return `
-      <article class="post-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition" data-post-id="${post.id}">
+      <article class="post-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition" data-post-id="${escapeHtml(post.id)}">
         <div class="flex items-center justify-between mb-3">
-          <div class="flex items-center gap-3">
-            <img src="${post.author.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100'}" alt="${post.author.name}" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700" />
-            <div>
+          <div class="flex items-center gap-3 min-w-0 flex-1">
+            <img src="${escapeHtml(safeImageUrl(post.author.avatar, 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100'))}" alt="${escapeHtml(post.author.name)}" class="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700" />
+            <div class="min-w-0">
               <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="font-semibold text-sm text-slate-900 dark:text-white">${post.author.name}</span>
+                <span class="font-semibold text-sm text-slate-900 dark:text-white break-words">${escapeHtml(post.author.name)}</span>
                 ${post.author.isVerifiedStudent ? `<span class="text-[10px] bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-1.5 py-0.5 rounded-full font-medium">✓ Verified</span>` : ''}
                 <span class="text-xs text-slate-400">•</span>
                 <span class="text-xs text-slate-500">${formatTimeAgo(post.createdAt)}</span>
               </div>
-              <div class="text-xs text-slate-500 flex items-center gap-2">
-                <span>${post.author.streamLabel || 'SSJU Campus'}</span>
-                ${post.category ? `<span class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-[11px] font-medium">${post.category}</span>` : ''}
+              <div class="text-xs text-slate-500 flex items-center gap-2 flex-wrap break-words">
+                <span>${escapeHtml(post.author.streamLabel || 'SSJU Campus')}</span>
+                ${post.category ? `<span class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-[11px] font-medium">${escapeHtml(post.category)}</span>` : ''}
               </div>
             </div>
           </div>
           <div class="flex items-center gap-1">
-            <button class="btn-bookmark p-1.5 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition ${isBookmarked ? 'text-amber-500' : ''}" data-post-id="${post.id}">
+            <button class="btn-bookmark p-1.5 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition ${isBookmarked ? 'text-amber-500' : ''}" data-post-id="${escapeHtml(post.id)}">
               <svg class="w-4 h-4 ${isBookmarked ? 'fill-current' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
             </button>
             ${post.author.username === user.username ? `
-              <button class="btn-delete-post p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-post-id="${post.id}">
+              <button class="btn-delete-post p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition" data-post-id="${escapeHtml(post.id)}">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
               </button>
             ` : ''}
           </div>
         </div>
 
-        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug cursor-pointer hover:text-blue-600 transition" onclick="window.togglePostComments('${post.id}')">
-          ${post.title}
+        <h3 class="btn-title-toggle-comments text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug cursor-pointer hover:text-blue-600 transition" data-post-id="${escapeHtml(post.id)}">
+          ${escapeHtml(post.title)}
         </h3>
 
-        <div class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-3 whitespace-pre-line">${post.content}</div>
+        <div class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-3 whitespace-pre-line">${escapeHtml(post.content)}</div>
 
         ${post.image ? `
-          <div class="post-image-container mb-3 bg-slate-100 dark:bg-slate-800 max-h-96 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700" onclick="window.openImageZoom('${post.image}')">
-            <img src="${post.image}" alt="Attachment" class="w-full h-auto max-h-96 object-cover" loading="lazy" />
+          <div class="post-image-container mb-3 bg-slate-100 dark:bg-slate-800 max-h-96 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700 cursor-zoom-in" data-post-id="${escapeHtml(post.id)}">
+            <img src="${escapeHtml(safeImageUrl(post.image))}" alt="Attachment" class="w-full h-auto max-h-96 object-cover" loading="lazy" />
           </div>
         ` : ''}
 
         ${post.tags && post.tags.length > 0 ? `
           <div class="flex items-center gap-1.5 flex-wrap mb-4">
-            ${post.tags.map(t => `<span class="text-xs text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 hover:bg-blue-100 px-2.5 py-0.5 rounded-full font-medium cursor-pointer" onclick="window.filterByTag('${t}')">#${t}</span>`).join('')}
+            ${post.tags.map(t => `<button type="button" class="btn-filter-tag text-xs text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 hover:bg-blue-100 px-2.5 py-0.5 rounded-full font-medium cursor-pointer" data-tag="${escapeHtml(t)}">#${escapeHtml(t)}</button>`).join('')}
           </div>
         ` : ''}
 
-        <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-400">
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-400">
           <div class="vote-pill inline-flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-0.5 border border-slate-200/80 dark:border-slate-700/80">
-            <button class="vote-btn-up flex items-center gap-1 px-2.5 py-1 rounded-full transition hover:text-orange-600 ${isUpvoted ? 'vote-btn-active-up font-bold' : ''}" data-post-id="${post.id}">
+            <button class="vote-btn-up flex items-center gap-1 px-2.5 py-1 rounded-full transition hover:text-orange-600 ${isUpvoted ? 'vote-btn-active-up font-bold' : ''}" data-post-id="${escapeHtml(post.id)}">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
-              <span>${post.upvotes || 0}</span>
+              <span>${escapeHtml(post.upvotes || 0)}</span>
             </button>
             <span class="w-[1px] h-3 bg-slate-300 dark:bg-slate-700"></span>
-            <button class="vote-btn-down px-2 py-1 rounded-full transition hover:text-indigo-600 ${isDownvoted ? 'vote-btn-active-down' : ''}" data-post-id="${post.id}">
+            <button class="vote-btn-down px-2 py-1 rounded-full transition hover:text-indigo-600 ${isDownvoted ? 'vote-btn-active-down' : ''}" data-post-id="${escapeHtml(post.id)}">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
             </button>
           </div>
 
-          <div class="flex items-center gap-2 sm:gap-3">
-            <button class="btn-toggle-comments flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition" data-post-id="${post.id}">
+          <div class="flex items-center gap-1 sm:gap-3">
+            <button class="btn-toggle-comments flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition" data-post-id="${escapeHtml(post.id)}">
               <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
               <span>${(post.comments && post.comments.length) || 0} Answers</span>
             </button>
-            <button class="btn-share-post flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition" data-post-id="${post.id}" data-post-title="${encodeURIComponent(post.title)}">
+            <button class="btn-share-post flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition" data-post-id="${escapeHtml(post.id)}" data-post-title="${escapeHtml(encodeURIComponent(post.title))}">
               <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
               <span class="hidden sm:inline">Share</span>
             </button>
           </div>
         </div>
 
-        <div id="commentsSection_${post.id}" class="comments-accordion hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+        <div id="commentsSection_${escapeHtml(post.id)}" class="comments-accordion hidden mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
           <div class="flex items-start gap-2.5 mb-4">
-            <img src="${user.avatar}" alt="${user.name}" class="w-8 h-8 rounded-full object-cover" />
+            <img src="${escapeHtml(safeImageUrl(user.avatar))}" alt="${escapeHtml(user.name)}" class="w-8 h-8 rounded-full object-cover" />
             <div class="flex-grow relative">
-              <textarea id="commentInput_${post.id}" rows="2" placeholder="Write an answer or response..." class="w-full text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-2.5 pr-20 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-              <button class="btn-submit-comment absolute bottom-2 right-2 px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-sm" data-post-id="${post.id}">Reply</button>
+              <textarea id="commentInput_${escapeHtml(post.id)}" rows="2" placeholder="Write an answer or response..." class="w-full text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-2.5 pr-20 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+              <button class="btn-submit-comment absolute bottom-2 right-2 px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-sm" data-post-id="${escapeHtml(post.id)}">Reply</button>
             </div>
           </div>
           <div class="space-y-3">
@@ -1108,13 +937,13 @@
               <div class="bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800 text-xs">
                 <div class="flex items-center justify-between mb-1.5">
                   <div class="flex items-center gap-2">
-                    <img src="${c.author.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100'}" alt="${c.author.name}" class="w-5 h-5 rounded-full object-cover" />
-                    <span class="font-semibold text-slate-800 dark:text-slate-200">${c.author.name}</span>
-                    <span class="text-slate-400 text-[11px]">${c.author.streamLabel || ''}</span>
+                    <img src="${escapeHtml(safeImageUrl(c.author.avatar, 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100'))}" alt="${escapeHtml(c.author.name)}" class="w-5 h-5 rounded-full object-cover" />
+                    <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(c.author.name)}</span>
+                    <span class="text-slate-400 text-[11px]">${escapeHtml(c.author.streamLabel || '')}</span>
                   </div>
                   <span class="text-slate-400 text-[10px]">${formatTimeAgo(c.createdAt)}</span>
                 </div>
-                <p class="text-slate-700 dark:text-slate-300 leading-relaxed">${c.content}</p>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed">${escapeHtml(c.content)}</p>
               </div>
             `).join('') : '<p class="text-xs text-slate-400 italic">No answers yet. Share your thoughts!</p>'}
           </div>
@@ -1132,7 +961,7 @@
       <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h1 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span>🏛️</span> Official Faculties & Courses
+            <span>🏛️</span> Faculties & Courses
           </h1>
           <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
             Soban Singh Jeena University, Almora academic programs. Select a faculty to explore discussions and PYQ papers.
@@ -1147,8 +976,8 @@
       <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 text-white rounded-2xl p-5 mb-6 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <span class="text-xs font-semibold bg-white/20 uppercase tracking-wider px-2.5 py-1 rounded-full">Your Enrolled Department</span>
-          <h2 class="text-xl font-bold mt-2">${user.streamName || 'Computer Applications & IT'}</h2>
-          <p class="text-xs text-blue-100 mt-1">Semester ${user.semester} • Roll: ${user.rollNo || 'SSJU Student'}</p>
+          <h2 class="text-xl font-bold mt-2">${escapeHtml(user.streamName || 'Computer Applications & IT')}</h2>
+          <p class="text-xs text-blue-100 mt-1">Semester ${escapeHtml(user.semester)} • Roll: ${escapeHtml(user.rollNo || 'SSJU Student')}</p>
         </div>
         <button onclick="window.navigateTo('settings')" class="px-4 py-2 bg-white text-blue-800 text-xs font-bold rounded-xl shadow hover:bg-blue-50 transition">
           Change in Settings ⚙️
@@ -1161,20 +990,20 @@
           <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm hover:border-blue-400 dark:hover:border-blue-600 transition flex flex-col justify-between group">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-3xl p-2 bg-slate-100 dark:bg-slate-800 rounded-xl">${stream.icon}</span>
-                <span class="text-xs font-mono font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300 px-2.5 py-1 rounded-lg">${stream.code}</span>
+                <span class="text-3xl p-2 bg-slate-100 dark:bg-slate-800 rounded-xl">${escapeHtml(stream.icon)}</span>
+                <span class="text-xs font-mono font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300 px-2.5 py-1 rounded-lg">${escapeHtml(stream.code)}</span>
               </div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition mb-1">${stream.name}</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">${stream.description}</p>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition mb-1">${escapeHtml(stream.name)}</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed mb-4">${escapeHtml(stream.description)}</p>
             </div>
             <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
               <div class="flex items-center gap-3 text-xs text-slate-500">
-                <span>👥 ${stream.studentCount || 0}</span>
-                <span>📄 ${stream.papersCount || 0} Papers</span>
+                <span>👥 ${escapeHtml(stream.studentCount || 0)} Members</span>
+                <span>📄 ${escapeHtml(stream.papersCount || 0)} Papers</span>
               </div>
               <div class="flex items-center gap-2">
-                <button onclick="window.filterFeedByStream('${stream.id}')" class="text-xs font-semibold px-3 py-1.5 bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 rounded-lg hover:bg-blue-100 transition">Explore Feed →</button>
-                <button onclick="window.filterPapersByStream('${stream.id}')" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 rounded-lg hover:bg-slate-200 transition">PYQs</button>
+                <button data-filter-feed-stream="${escapeHtml(stream.id)}" class="btn-filter-feed-stream text-xs font-semibold px-3 py-1.5 bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 rounded-lg hover:bg-blue-100 transition">Explore Feed →</button>
+                <button data-filter-paper-stream="${escapeHtml(stream.id)}" class="btn-filter-paper-stream text-xs font-semibold px-3 py-1.5 bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 rounded-lg hover:bg-slate-200 transition">PYQs</button>
               </div>
             </div>
           </div>
@@ -1201,7 +1030,7 @@
             <h1 class="text-xl font-bold">SSJU Question Paper (PYQ) Vault</h1>
           </div>
           <p class="text-xs text-emerald-100 mt-1 max-w-xl">
-            Archive of authentic Soban Singh Jeena University previous year examination papers. Upload PDF papers or download anytime for free!
+            Student-contributed exam PDFs. Check each paper's subject and exam details before relying on it.
           </p>
         </div>
         <button id="btnOpenPaperModal" class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 bg-white text-emerald-800 font-bold text-xs rounded-xl shadow-lg hover:bg-emerald-50 transition">
@@ -1216,7 +1045,7 @@
             <label class="block text-[11px] font-semibold text-slate-500 uppercase mb-1">Filter Faculty</label>
             <select id="paperStreamSelect" class="w-full text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-slate-800 dark:text-slate-200">
               <option value="">All Faculties</option>
-              ${streams.map(s => `<option value="${s.id}" ${state.selectedStreamId === s.id ? 'selected' : ''}>${s.name}</option>`).join('')}
+              ${streams.map(s => `<option value="${escapeHtml(s.id)}" ${state.selectedStreamId === s.id ? 'selected' : ''}>${escapeHtml(s.name)}</option>`).join('')}
             </select>
           </div>
           <div>
@@ -1290,30 +1119,30 @@
 
           <div>
             <div class="flex items-center gap-2 flex-wrap mb-1">
-              <span class="text-xs font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-2 py-0.5 rounded">${paper.subjectCode}</span>
-              <span class="text-xs font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300 px-2 py-0.5 rounded-full">Sem ${paper.semester}</span>
-              <span class="text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300 px-2 py-0.5 rounded-full">${paper.examYear} ${paper.examType || 'Regular'}</span>
+              <span class="text-xs font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 px-2 py-0.5 rounded">${escapeHtml(paper.subjectCode)}</span>
+              <span class="text-xs font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300 px-2 py-0.5 rounded-full">Sem ${escapeHtml(paper.semester)}</span>
+              <span class="text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300 px-2 py-0.5 rounded-full">${escapeHtml(paper.examYear)} ${escapeHtml(paper.examType || 'Regular')}</span>
             </div>
 
-            <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">${paper.title}</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">${paper.description || paper.streamName}</p>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">${escapeHtml(paper.title)}</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">${escapeHtml(paper.description || paper.streamName)}</p>
 
             <div class="flex items-center gap-3 text-[11px] text-slate-400 mt-2">
-              <span>Uploader: <strong>${paper.uploaderName || 'Student Council'}</strong></span>
+              <span>Uploader: <strong>${escapeHtml(paper.uploaderName || 'Student')}</strong></span>
               <span>•</span>
-              <span>Size: ${paper.fileSize || '1.2 MB'}</span>
+              <span>Size: ${escapeHtml(paper.fileSize || 'PDF')}</span>
               <span>•</span>
-              <span>Downloads: <strong>${paper.downloadsCount || 0}</strong></span>
+              <span>Downloads: <strong>${escapeHtml(paper.downloadsCount || 0)}</strong></span>
             </div>
           </div>
         </div>
 
         <div class="flex items-center gap-2 flex-shrink-0 self-end md:self-center">
-          <button class="btn-preview-paper text-xs font-semibold px-3.5 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl transition flex items-center gap-1.5" data-paper-id="${paper.id}">
+          <button class="btn-preview-paper text-xs font-semibold px-3.5 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl transition flex items-center gap-1.5" data-paper-id="${escapeHtml(paper.id)}">
             <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
             Preview
           </button>
-          <button class="btn-download-paper text-xs font-bold px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl shadow-sm transition flex items-center gap-1.5" data-paper-id="${paper.id}">
+          <button class="btn-download-paper text-xs font-bold px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl shadow-sm transition flex items-center gap-1.5" data-paper-id="${escapeHtml(paper.id)}">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             Download PDF
           </button>
@@ -1328,45 +1157,46 @@
     const allPosts = getPosts();
     const allPapers = getPapers();
 
-    const userPosts = allPosts.filter(p => p.author.username === user.username);
-    const userPapers = allPapers.filter(p => p.uploaderName === user.name);
+    const userPosts = allPosts.filter(p => p.author.username === user.username || p.author.name === user.name || p.author.id === user.id);
+    const userPapers = allPapers.filter(p => p.uploaderName === user.name || p.uploaderUsername === user.username || p.uploaderId === user.id);
     const savedPosts = allPosts.filter(p => (user.bookmarks || []).includes(`post_${p.id}`));
 
     container.innerHTML = `
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm mb-6">
         <div class="h-32 sm:h-44 bg-gradient-to-r from-blue-600 via-indigo-600 to-slate-800 relative">
-          <button onclick="window.navigateTo('settings')" class="absolute top-4 right-4 bg-white/90 hover:bg-white text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-xl shadow-md transition flex items-center gap-1.5">
-            Edit Profile ⚙️
+          <button onclick="window.openEditProfileModal()" class="absolute top-4 right-4 bg-white/95 hover:bg-white text-blue-700 text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition flex items-center gap-1.5 hover:scale-105">
+            ✏️ Edit Profile
           </button>
         </div>
-        <div class="px-6 pb-6 pt-0 relative">
+        <div class="px-4 sm:px-6 pb-6 pt-0 relative">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between -mt-14 sm:-mt-16 mb-4 gap-4">
-            <div class="flex items-end gap-4">
-              <img src="${user.avatar}" alt="${user.name}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-4 border-white dark:border-slate-900 shadow-md bg-white" />
-              <div class="mb-1">
+            <div class="flex items-end gap-3 sm:gap-4 min-w-0">
+              <img src="${escapeHtml(safeImageUrl(user.avatar))}" alt="${escapeHtml(user.name)}" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-4 border-white dark:border-slate-900 shadow-md bg-white" />
+              <div class="mb-1 min-w-0">
                 <div class="flex items-center gap-2">
-                  <h1 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">${user.name}</h1>
+                  <h1 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white break-words">${escapeHtml(user.name)}</h1>
+                  <button onclick="window.openEditProfileModal()" title="Edit Name & Profile" class="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 p-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/40">✏️</button>
                   <span class="text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-2 py-0.5 rounded-full font-semibold">Student</span>
                 </div>
-                <p class="text-xs text-slate-500">@${user.username} • Roll: ${user.rollNo}</p>
+                <p class="text-xs text-slate-500 break-words">@${escapeHtml(user.username)} • Roll: ${escapeHtml(user.rollNo)}</p>
               </div>
             </div>
             <div class="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-2xl text-center">
-              <span class="block text-lg font-black text-blue-600 dark:text-blue-400">${user.reputation || 340}</span>
+              <span class="block text-lg font-black text-blue-600 dark:text-blue-400">${escapeHtml(user.reputation || 0)}</span>
               <span class="text-[10px] font-bold text-slate-400 uppercase">Campus Karma</span>
             </div>
           </div>
-          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">${user.bio || 'Soban Singh Jeena University student.'}</p>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">${escapeHtml(user.bio || 'Soban Singh Jeena University student.')}</p>
           <div class="flex items-center gap-2 flex-wrap mb-2">
             <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-3 py-1 rounded-full font-semibold">
-              🏛️ ${user.streamName} (Sem ${user.semester})
+              🏛️ ${escapeHtml(user.streamName)} (Sem ${escapeHtml(user.semester)})
             </span>
-            ${(user.badges || []).map(b => `<span class="text-xs bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200/50 px-2.5 py-1 rounded-full font-medium">🏆 ${b}</span>`).join('')}
+            ${(user.badges || []).map(b => `<span class="text-xs bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200/50 px-2.5 py-1 rounded-full font-medium">🏆 ${escapeHtml(b)}</span>`).join('')}
           </div>
         </div>
       </div>
 
-      <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 mb-6 pb-2">
+      <div class="flex flex-wrap items-center gap-2 border-b border-slate-200 dark:border-slate-800 mb-6 pb-2">
         <button class="profile-tab-btn text-sm font-bold px-4 py-2 rounded-xl transition ${state.profileTab === 'posts' ? 'bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400' : 'text-slate-500'}" data-tab="posts">My Posts (${userPosts.length})</button>
         <button class="profile-tab-btn text-sm font-bold px-4 py-2 rounded-xl transition ${state.profileTab === 'papers' ? 'bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400' : 'text-slate-500'}" data-tab="papers">Uploaded PYQs (${userPapers.length})</button>
         <button class="profile-tab-btn text-sm font-bold px-4 py-2 rounded-xl transition ${state.profileTab === 'saved' ? 'bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400' : 'text-slate-500'}" data-tab="saved">Saved Bookmarks (${savedPosts.length})</button>
@@ -1415,11 +1245,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Full Name</label>
-                <input type="text" id="settingName" value="${user.name}" required class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100" />
+                <input type="text" id="settingName" value="${escapeHtml(user.name)}" required class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100" />
               </div>
               <div>
                 <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Username</label>
-                <input type="text" id="settingUsername" value="${user.username}" required class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100" />
+                <input type="text" id="settingUsername" value="${escapeHtml(user.username)}" required class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100" />
               </div>
             </div>
 
@@ -1427,7 +1257,7 @@
               <div>
                 <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Enrolled Faculty / Stream</label>
                 <select id="settingStream" class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100">
-                  ${streams.map(s => `<option value="${s.id}" ${user.stream === s.id ? 'selected' : ''}>${s.name}</option>`).join('')}
+                  ${streams.map(s => `<option value="${escapeHtml(s.id)}" ${user.stream === s.id ? 'selected' : ''}>${escapeHtml(s.name)}</option>`).join('')}
                 </select>
               </div>
               <div>
@@ -1440,12 +1270,12 @@
 
             <div>
               <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">University Roll Number</label>
-              <input type="text" id="settingRollNo" value="${user.rollNo || ''}" class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100" />
+              <input type="text" id="settingRollNo" value="${escapeHtml(user.rollNo || '')}" class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2 text-slate-800 dark:text-slate-100" />
             </div>
 
             <div>
               <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">Bio</label>
-              <textarea id="settingBio" rows="3" class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3 text-slate-800 dark:text-slate-100">${user.bio || ''}</textarea>
+              <textarea id="settingBio" rows="3" class="w-full text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3 text-slate-800 dark:text-slate-100">${escapeHtml(user.bio || '')}</textarea>
             </div>
 
             <button type="submit" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition">Save Profile Changes</button>
@@ -1453,7 +1283,7 @@
         </div>
 
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-          <h2 class="text-base font-bold text-slate-900 dark:text-white mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">Theme & Data Preferences</h2>
+          <h2 class="text-base font-bold text-slate-900 dark:text-white mb-4 pb-2 border-b border-slate-100 dark:border-slate-800">Theme Preferences</h2>
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <div>
@@ -1465,24 +1295,16 @@
                 <button class="theme-choice-btn text-xs font-semibold px-3 py-1.5 rounded-lg ${settings.theme === 'dark' ? 'bg-white dark:bg-slate-900 text-blue-400 shadow-sm' : 'text-slate-500'}" data-theme="dark">🌙 Dark</button>
               </div>
             </div>
-
-            <div class="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800">
-              <div>
-                <span class="text-sm font-semibold text-rose-600 block">Reset Demo Data</span>
-                <span class="text-xs text-slate-400">Restore default demo posts and question papers</span>
-              </div>
-              <button id="btnResetData" class="text-xs font-bold px-4 py-2 bg-rose-50 text-rose-700 rounded-xl hover:bg-rose-100 transition">Reset All Data</button>
-            </div>
           </div>
         </div>
       </div>
     `;
 
-    document.getElementById('profileSettingsForm')?.addEventListener('submit', (e) => {
+    document.getElementById('profileSettingsForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const sId = document.getElementById('settingStream').value;
       const streamObj = streams.find(s => s.id === sId);
-      updateUser({
+      const updates = {
         name: document.getElementById('settingName').value.trim(),
         username: document.getElementById('settingUsername').value.trim(),
         rollNo: document.getElementById('settingRollNo').value.trim(),
@@ -1490,7 +1312,9 @@
         streamName: streamObj ? streamObj.name : 'Computer Applications',
         semester: parseInt(document.getElementById('settingSemester').value, 10),
         bio: document.getElementById('settingBio').value.trim()
-      });
+      };
+      try { if (API.isOnline) await API.updateUser(updates); else updateUser(updates); }
+      catch (err) { showToast(err.message || 'Could not update the profile.', 'error'); return; }
       showToast('Profile updated successfully!', 'success');
       updateHeaderUserBadge();
     });
@@ -1505,13 +1329,6 @@
       });
     });
 
-    document.getElementById('btnResetData')?.addEventListener('click', () => {
-      if (confirm('Reset all demo data to default?')) {
-        resetAllData();
-        navigateTo('home');
-        showToast('Data reset to default', 'info');
-      }
-    });
   }
 
   function renderSearchResultsView() {
@@ -1541,7 +1358,7 @@
     container.innerHTML = `
       <div class="mb-6">
         <h1 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <span>🔍</span> Search Results for "${state.searchQuery}"
+          <span>🔍</span> Search Results for "${escapeHtml(state.searchQuery)}"
         </h1>
         <p class="text-xs text-slate-500 mt-1">Found ${matchedPosts.length} posts, ${matchedPapers.length} question papers, and ${matchedStreams.length} faculties.</p>
       </div>
@@ -1551,11 +1368,11 @@
           <h2 class="text-sm font-bold text-slate-500 uppercase mb-3">Matching Faculties</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             ${matchedStreams.map(s => `
-              <div onclick="window.filterFeedByStream('${s.id}')" class="cursor-pointer p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 flex items-center gap-3">
-                <span class="text-2xl">${s.icon}</span>
+              <div data-search-stream-id="${escapeHtml(s.id)}" class="btn-search-stream cursor-pointer p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 flex items-center gap-3">
+                <span class="text-2xl">${escapeHtml(s.icon)}</span>
                 <div>
-                  <h3 class="text-sm font-bold text-slate-900 dark:text-white">${s.name}</h3>
-                  <span class="text-xs text-slate-500">${s.code} • ${s.studentCount} Students</span>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white">${escapeHtml(s.name)}</h3>
+                  <span class="text-xs text-slate-500">${escapeHtml(s.code)} • ${escapeHtml(s.studentCount)} Members</span>
                 </div>
               </div>
             `).join('')}
@@ -1586,6 +1403,21 @@
     const container = document.getElementById('rightSidebarArea');
     if (!container) return;
     const papers = getPapers();
+    const tagCounts = new Map();
+    getPosts().forEach(post => {
+      if (!Array.isArray(post.tags)) return;
+      post.tags.forEach(value => {
+        const tag = String(value).replace(/^#/, '').trim().slice(0, 30);
+        if (!tag) return;
+        const key = tag.toLowerCase();
+        const entry = tagCounts.get(key) || { tag, count: 0 };
+        entry.count += 1;
+        tagCounts.set(key, entry);
+      });
+    });
+    const trendingTags = [...tagCounts.values()]
+      .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag))
+      .slice(0, 3);
 
     container.innerHTML = `
       <div class="bg-gradient-to-br from-blue-700 to-indigo-900 text-white p-5 rounded-2xl shadow-sm mb-4">
@@ -1607,12 +1439,12 @@
         </div>
         <div class="space-y-2 mb-3">
           ${papers.slice(0, 3).map(p => `
-            <div onclick="window.openPaperPreviewModalFromWidget('${p.id}')" class="cursor-pointer p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-950/40 border border-slate-100 dark:border-slate-800 transition">
+            <div data-paper-id="${escapeHtml(p.id)}" class="btn-preview-widget cursor-pointer p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-950/40 border border-slate-100 dark:border-slate-800 transition">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-800 dark:text-slate-200">${p.subjectCode}</span>
-                <span class="text-[10px] text-emerald-600 font-semibold">${p.examYear}</span>
+                <span class="text-xs font-bold text-slate-800 dark:text-slate-200">${escapeHtml(p.subjectCode)}</span>
+                <span class="text-[10px] text-emerald-600 font-semibold">${escapeHtml(p.examYear)}</span>
               </div>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">${p.title}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">${escapeHtml(p.title)}</p>
             </div>
           `).join('')}
         </div>
@@ -1622,21 +1454,21 @@
       </div>
 
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 mb-4 shadow-sm">
-        <h3 class="font-bold text-sm text-slate-900 dark:text-white mb-3 flex items-center gap-2"><span>🔥</span> Trending in SSJU</h3>
+        <h3 class="font-bold text-sm text-slate-900 dark:text-white mb-3 flex items-center gap-2"><span>🔥</span> Popular Tags</h3>
         <div class="space-y-3">
-          <div onclick="window.filterByTag('EndTermExams')" class="cursor-pointer">
-            <span class="text-[10px] text-slate-400">Academics</span>
-            <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600">#EndTermExams2026</h4>
-            <span class="text-[11px] text-slate-500">1.2k students</span>
-          </div>
-          <div onclick="window.filterByTag('Placements')" class="cursor-pointer">
-            <span class="text-[10px] text-slate-400">Career</span>
-            <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600">#CampusPlacements</h4>
-            <span class="text-[11px] text-slate-500">850 posts</span>
-          </div>
+          ${trendingTags.length ? trendingTags.map(item => `
+            <button type="button" data-trending-tag="${escapeHtml(item.tag)}" class="btn-trending-tag block w-full text-left cursor-pointer">
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600">#${escapeHtml(item.tag)}</span>
+              <span class="text-[11px] text-slate-500 block">${escapeHtml(item.count)} ${item.count === 1 ? 'post' : 'posts'}</span>
+            </button>
+          `).join('') : '<p class="text-xs text-slate-400">Tags from posts will appear here.</p>'}
         </div>
       </div>
     `;
+
+    container.querySelectorAll('.btn-trending-tag').forEach(button => {
+      button.addEventListener('click', () => window.filterByTag(button.getAttribute('data-trending-tag')));
+    });
   }
 
   function attachHomeFeedEvents() {
@@ -1666,20 +1498,26 @@
     document.getElementById('btnUploadPaperQuick')?.addEventListener('click', () => openUploadPaperModal());
 
     document.querySelectorAll('.vote-btn-up').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', async (e) => {
         e.stopPropagation();
         const postId = e.currentTarget.getAttribute('data-post-id');
-        togglePostVote(postId, 'up');
+        try {
+          if (API.isOnline) await API.votePost(postId, 'up');
+          else togglePostVote(postId, 'up');
+        } catch (err) { showToast(err.message, 'error'); return; }
         renderHomeView();
         showToast('Upvoted!', 'success');
       });
     });
 
     document.querySelectorAll('.vote-btn-down').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', async (e) => {
         e.stopPropagation();
         const postId = e.currentTarget.getAttribute('data-post-id');
-        togglePostVote(postId, 'down');
+        try {
+          if (API.isOnline) await API.votePost(postId, 'down');
+          else togglePostVote(postId, 'down');
+        } catch (err) { showToast(err.message, 'error'); return; }
         renderHomeView();
         showToast('Downvoted', 'info');
       });
@@ -1696,11 +1534,14 @@
     });
 
     document.querySelectorAll('.btn-delete-post').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', async (e) => {
         e.stopPropagation();
         const postId = e.currentTarget.getAttribute('data-post-id');
         if (confirm('Delete this post?')) {
-          deletePost(postId);
+          try {
+            if (API.isOnline) await API.deletePost(postId);
+            else deletePost(postId);
+          } catch (err) { showToast(err.message, 'error'); return; }
           renderHomeView();
           showToast('Post deleted', 'info');
         }
@@ -1716,14 +1557,14 @@
     });
 
     document.querySelectorAll('.btn-submit-comment').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', async (e) => {
         e.stopPropagation();
         const postId = e.currentTarget.getAttribute('data-post-id');
         const input = document.getElementById(`commentInput_${postId}`);
         if (!input || !input.value.trim()) return;
 
         const user = getUser();
-        addCommentToPost(postId, {
+        const comment = {
           author: {
             name: user.name,
             username: user.username,
@@ -1731,7 +1572,11 @@
             streamLabel: `${user.streamName} - Sem ${user.semester}`
           },
           content: input.value.trim()
-        });
+        };
+        try {
+          if (API.isOnline) await API.addComment(postId, comment);
+          else addCommentToPost(postId, comment);
+        } catch (err) { showToast(err.message, 'error'); return; }
 
         input.value = '';
         renderHomeView();
@@ -1762,10 +1607,12 @@
         const paper = papers.find(p => p.id === paperId);
         if (!paper) return;
 
-        showToast(`Downloading ${paper.subjectCode}...`, 'info');
-        incrementPaperDownload(paperId);
-        await triggerPaperDownload(paper);
-        showToast('Download started!', 'success');
+        try {
+          showToast(`Downloading ${paper.subjectCode}...`, 'info');
+          const currentPaper = API.isOnline ? await API.downloadPaper(paperId) : incrementPaperDownload(paperId);
+          await triggerPaperDownload(currentPaper || paper);
+          showToast('Download started!', 'success');
+        } catch (err) { showToast(err.message || 'Could not download the PDF.', 'error'); }
       });
     });
 
@@ -1779,53 +1626,71 @@
     });
   }
 
-  function openPaperPreviewModal(paper) {
+  async function openPaperPreviewModal(paper) {
     const modal = document.getElementById('paperPreviewModal');
     const title = document.getElementById('previewModalTitle');
     const body = document.getElementById('previewModalBody');
     const dwnBtn = document.getElementById('previewModalDownloadBtn');
+    const openTabBtn = document.getElementById('previewModalOpenTabBtn');
+    const openTabBtnMobile = document.getElementById('previewModalOpenTabBtnMobile');
     if (!modal || !body) return;
 
     title.textContent = `${paper.subjectCode} - ${paper.title}`;
-    body.innerHTML = `
-      <div class="border border-slate-300 dark:border-slate-700 rounded-xl p-6 bg-white text-slate-900 shadow-inner font-serif">
-        <div class="text-center border-b-2 border-slate-900 pb-3 mb-4">
-          <h2 class="text-lg font-bold uppercase tracking-wider text-blue-900">Soban Singh Jeena University, Almora</h2>
-          <h3 class="text-sm font-semibold text-slate-700">${paper.streamName}</h3>
-          <p class="text-xs text-slate-500">${paper.examType} Examination - ${paper.examYear}</p>
-        </div>
-        <div class="flex justify-between text-xs mb-3 font-sans">
-          <div><strong>Course:</strong> ${paper.title}</div>
-          <div><strong>Code:</strong> ${paper.subjectCode}</div>
-        </div>
-        <div class="flex justify-between text-xs mb-4 pb-2 border-b border-slate-200 font-sans">
-          <div><strong>Semester:</strong> ${paper.semester}</div>
-          <div><strong>Time:</strong> 3 Hours | <strong>Max Marks:</strong> 100</div>
-        </div>
-        <div class="space-y-4 text-xs font-sans">
-          <div>
-            <h4 class="font-bold text-blue-900 border-b border-slate-200 pb-1 mb-2">SECTION A: Short Answer Questions (30 Marks)</h4>
-            <ol class="list-decimal pl-4 space-y-1 text-slate-800">
-              <li>Define the core objectives and scope of ${paper.subjectCode}.</li>
-              <li>State fundamental laws and empirical derivations involved.</li>
-              <li>Explain key operational constraints and edge scenarios.</li>
-            </ol>
-          </div>
-          <div>
-            <h4 class="font-bold text-blue-900 border-b border-slate-200 pb-1 mb-2">SECTION B: Analytical Problems (70 Marks)</h4>
-            <ol class="list-decimal pl-4 space-y-1 text-slate-800" start="4">
-              <li>Derive theoretical foundations and formulate optimized solutions for ${paper.title}.</li>
-              <li>Analyze concurrent state machines and recovery mechanisms under failure conditions.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    `;
 
-    dwnBtn.onclick = async () => {
-      await triggerPaperDownload(paper);
-      showToast('Download started!', 'success');
-    };
+    const realFileUrl = await getPaperFileUrl(paper);
+
+    if (realFileUrl) {
+      if (dwnBtn) dwnBtn.disabled = false;
+      if (openTabBtn) {
+        openTabBtn.href = realFileUrl;
+        openTabBtn.classList.remove('hidden');
+      }
+      if (openTabBtnMobile) {
+        openTabBtnMobile.href = realFileUrl;
+        openTabBtnMobile.classList.remove('hidden');
+      }
+
+      body.innerHTML = `
+        <div class="space-y-3">
+          <div class="flex items-center justify-between bg-slate-50 dark:bg-slate-800 p-3 rounded-2xl border border-slate-200 dark:border-slate-700 text-xs">
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white block text-sm">${escapeHtml(paper.title)}</span>
+              <span class="text-slate-500 dark:text-slate-400 text-xs">${escapeHtml(paper.streamName)} • Sem ${escapeHtml(paper.semester)} • Exam Year ${escapeHtml(paper.examYear)}</span>
+            </div>
+            <div class="text-right">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-800">
+                ✓ Stored PDF file
+              </span>
+              <span class="text-[11px] text-slate-400 block mt-0.5">${escapeHtml(paper.fileSize || 'PDF')} • By ${escapeHtml(paper.uploaderName || 'Student')}</span>
+            </div>
+          </div>
+
+          <div class="w-full h-[62vh] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-950 shadow-inner">
+            <iframe src="${escapeHtml(realFileUrl)}#toolbar=1" class="w-full h-full border-0 rounded-2xl" title="Exam Paper PDF Viewer"></iframe>
+          </div>
+        </div>
+      `;
+
+      dwnBtn.onclick = async () => {
+        try {
+          if (API.isOnline) await API.downloadPaper(paper.id);
+          else incrementPaperDownload(paper.id);
+          await triggerPaperDownload(paper);
+          showToast('PDF download started!', 'success');
+        } catch (err) { showToast(err.message || 'Could not download the PDF.', 'error'); }
+      };
+    } else {
+      if (openTabBtn) openTabBtn.classList.add('hidden');
+      if (openTabBtnMobile) openTabBtnMobile.classList.add('hidden');
+      body.innerHTML = `
+        <div class="rounded-xl border border-amber-200 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-800 p-6 text-center">
+          <h3 class="font-bold text-slate-800 dark:text-slate-100">Original PDF unavailable</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">This entry has no stored exam paper file, so it cannot be previewed or downloaded.</p>
+        </div>
+      `;
+      if (dwnBtn) dwnBtn.disabled = true;
+    }
+
     modal.classList.remove('hidden');
   }
 
@@ -1839,7 +1704,7 @@
     if (streamSelect) {
       streamSelect.innerHTML = `
         <option value="">General (All Faculties)</option>
-        ${streams.map(s => `<option value="${s.id}" ${user.stream === s.id ? 'selected' : ''}>${s.name}</option>`).join('')}
+        ${streams.map(s => `<option value="${escapeHtml(s.id)}" ${user.stream === s.id ? 'selected' : ''}>${escapeHtml(s.name)}</option>`).join('')}
       `;
     }
 
@@ -1868,20 +1733,57 @@
 
     const streamSelect = document.getElementById('paperModalStreamSelect');
     if (streamSelect) {
-      streamSelect.innerHTML = streams.map(s => `<option value="${s.id}" ${user.stream === s.id ? 'selected' : ''}>${s.name}</option>`).join('');
+      streamSelect.innerHTML = streams.map(s => `<option value="${escapeHtml(s.id)}" ${user.stream === s.id ? 'selected' : ''}>${escapeHtml(s.name)}</option>`).join('');
     }
 
     document.getElementById('paperSubjectCodeInput').value = '';
     document.getElementById('paperTitleInput').value = '';
     document.getElementById('paperDescriptionInput').value = '';
     document.getElementById('paperFileInput').value = '';
-    document.getElementById('paperFileNameDisplay').textContent = 'No file selected (Standard SSJU format will be generated if omitted)';
+    document.getElementById('paperFileNameDisplay').textContent = 'Select the original PDF file to add a paper.';
+    const uploadStatus = document.getElementById('paperUploadStatus');
+    if (uploadStatus) uploadStatus.classList.add('hidden');
     state.tempPaperFile = null;
+    state.pendingUploadFile = null;
     modal.classList.remove('hidden');
   }
 
   function closeUploadPaperModal() {
     document.getElementById('uploadPaperModal')?.classList.add('hidden');
+  }
+
+  function openEditProfileModal() {
+    const modal = document.getElementById('editProfileModal');
+    if (!modal) return;
+    const user = getUser();
+    const streams = getStreams();
+
+    const streamSelect = document.getElementById('modalUserStream');
+    if (streamSelect) {
+      streamSelect.innerHTML = streams.map(s => `<option value="${escapeHtml(s.id)}" ${user.stream === s.id ? 'selected' : ''}>${escapeHtml(s.name)}</option>`).join('');
+    }
+
+    const nameInput = document.getElementById('modalUserName');
+    const usernameInput = document.getElementById('modalUserUsername');
+    const semSelect = document.getElementById('modalUserSemester');
+    const rollInput = document.getElementById('modalUserRollNo');
+    const bioInput = document.getElementById('modalUserBio');
+    const avatarInput = document.getElementById('modalUserAvatar');
+    const avatarPreview = document.getElementById('editProfileAvatarPreview');
+
+    if (nameInput) nameInput.value = user.name || '';
+    if (usernameInput) usernameInput.value = user.username || '';
+    if (semSelect) semSelect.value = user.semester || 1;
+    if (rollInput) rollInput.value = user.rollNo || '';
+    if (bioInput) bioInput.value = user.bio || '';
+    if (avatarInput) avatarInput.value = user.avatar || '';
+    if (avatarPreview) avatarPreview.src = safeImageUrl(user.avatar, 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=250&q=80');
+
+    modal.classList.remove('hidden');
+  }
+
+  function closeEditProfileModal() {
+    document.getElementById('editProfileModal')?.classList.add('hidden');
   }
 
   function openShareModal(customData = null) {
@@ -1893,7 +1795,17 @@
     const text = (customData && customData.text) || 'Join SSJU Connect to discuss campus topics and download question papers!';
 
     const qrContainer = document.getElementById('shareQrCodeContainer');
-    if (qrContainer) qrContainer.innerHTML = generateQrCodeSvg(url, 180);
+    if (qrContainer) {
+      const image = document.createElement('img');
+      image.width = 180;
+      image.height = 180;
+      image.alt = 'QR code for SSJU Connect';
+      image.className = 'rounded-xl bg-white p-2 shadow-inner border border-slate-200';
+      image.referrerPolicy = 'no-referrer';
+      image.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(url)}`;
+      image.onerror = () => { qrContainer.textContent = 'QR code unavailable. Copy the link below to share.'; };
+      qrContainer.replaceChildren(image);
+    }
 
     const urlInput = document.getElementById('shareUrlInput');
     if (urlInput) urlInput.value = url;
@@ -1923,8 +1835,8 @@
   function renderEmptyState(title, subtitle) {
     return `
       <div class="text-center py-12 px-4 bg-white dark:bg-slate-900 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
-        <h3 class="text-base font-bold text-slate-700 dark:text-slate-300">${title}</h3>
-        <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">${subtitle}</p>
+        <h3 class="text-base font-bold text-slate-700 dark:text-slate-300">${escapeHtml(title)}</h3>
+        <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">${escapeHtml(subtitle)}</p>
       </div>
     `;
   }
@@ -1942,6 +1854,26 @@
   // 6. INITIALIZE LISTENERS & HASH ROUTING
   // ========================================================
   function initEventListeners() {
+    document.addEventListener('click', (e) => {
+      const title = e.target.closest('.btn-title-toggle-comments');
+      if (title) return window.togglePostComments(title.getAttribute('data-post-id'));
+      const image = e.target.closest('.post-image-container');
+      if (image) {
+        const post = getPosts().find(item => item.id === image.getAttribute('data-post-id'));
+        if (post) return window.openImageZoom(post.image);
+      }
+      const tag = e.target.closest('.btn-filter-tag');
+      if (tag) return window.filterByTag(tag.getAttribute('data-tag'));
+      const feedStream = e.target.closest('.btn-filter-feed-stream');
+      if (feedStream) return window.filterFeedByStream(feedStream.getAttribute('data-filter-feed-stream'));
+      const paperStream = e.target.closest('.btn-filter-paper-stream');
+      if (paperStream) return window.filterPapersByStream(paperStream.getAttribute('data-filter-paper-stream'));
+      const searchStream = e.target.closest('.btn-search-stream');
+      if (searchStream) return window.filterFeedByStream(searchStream.getAttribute('data-search-stream-id'));
+      const paperWidget = e.target.closest('.btn-preview-widget');
+      if (paperWidget) return window.openPaperPreviewModalFromWidget(paperWidget.getAttribute('data-paper-id'));
+    });
+
     // Nav Target Clicks (Sidebar & Mobile)
     document.querySelectorAll('[data-nav-target]').forEach(el => {
       el.addEventListener('click', (e) => {
@@ -2007,6 +1939,7 @@
       showToast(`Switched to ${newTheme} mode`, 'info');
       userMenuDropdown.classList.add('hidden');
     });
+    document.getElementById('menuItemLogout')?.addEventListener('click', () => API.logout());
 
     document.getElementById('btnNavCreatePost')?.addEventListener('click', () => openCreatePostModal());
     document.getElementById('btnNavShareApp')?.addEventListener('click', () => openShareModal());
@@ -2015,12 +1948,19 @@
     document.getElementById('postImageInput')?.addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (file) {
+        if (!/^image\/(png|jpeg|gif|webp)$/i.test(file.type) || file.size > 700 * 1024) {
+          e.target.value = '';
+          state.tempPostImage = null;
+          document.getElementById('postImagePreviewArea')?.classList.add('hidden');
+          showToast('Choose a PNG, JPEG, GIF, or WebP image up to 700 KB.', 'error');
+          return;
+        }
         const dataUrl = await readFileAsDataURL(file);
         state.tempPostImage = dataUrl;
         const previewBox = document.getElementById('postImagePreviewArea');
         const previewImg = document.getElementById('postImagePreviewElement');
         if (previewBox && previewImg) {
-          previewImg.src = dataUrl;
+          previewImg.src = safeImageUrl(dataUrl);
           previewBox.classList.remove('hidden');
         }
       }
@@ -2032,7 +1972,7 @@
       document.getElementById('postImagePreviewArea')?.classList.add('hidden');
     });
 
-    document.getElementById('createPostForm')?.addEventListener('submit', (e) => {
+    document.getElementById('createPostForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const title = document.getElementById('postTitleInput').value.trim();
       const content = document.getElementById('postContentInput').value.trim();
@@ -2046,40 +1986,59 @@
       const streams = getStreams();
       const streamObj = streams.find(s => s.id === (streamId || user.stream));
 
-      savePost({
-        author: {
-          name: user.name,
-          username: user.username,
-          avatar: user.avatar,
-          stream: user.stream,
-          streamLabel: `${streamObj ? streamObj.name : 'SSJU Student'} - Sem ${user.semester}`,
-          isVerifiedStudent: true
-        },
+      const newPost = {
         title,
         content,
         category,
         streamId,
         tags,
         image: state.tempPostImage || null
-      });
+      };
+
+      try {
+        if (API.isOnline) await API.savePost(newPost);
+        else savePost({
+          ...newPost,
+          author: {
+            name: user.name, username: user.username, avatar: user.avatar,
+            stream: user.stream,
+            streamLabel: `${streamObj ? streamObj.name : 'SSJU Student'} - Sem ${user.semester}`,
+            isVerifiedStudent: true
+          }
+        });
+      } catch (err) { showToast(err.message || 'Could not publish the post.', 'error'); return; }
 
       closeCreatePostModal();
       showToast('Post published!', 'success');
       navigateTo('home');
     });
 
-    // Paper File Upload
+    // Paper File Selection
     document.getElementById('paperFileInput')?.addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (file) {
+        const header = new Uint8Array(await file.slice(0, 5).arrayBuffer());
+        const isPdf = file.name.toLowerCase().endsWith('.pdf') &&
+          (file.type === '' || file.type === 'application/pdf') &&
+          String.fromCharCode(...header) === '%PDF-';
+        if (!isPdf || file.size > 20 * 1024 * 1024) {
+          state.pendingUploadFile = null;
+          e.target.value = '';
+          showToast(!isPdf ? 'Choose a valid PDF file.' : 'PDF files must be 20 MB or smaller.', 'error');
+          document.getElementById('paperFileNameDisplay').textContent = 'Choose one PDF file up to 20 MB.';
+          return;
+        }
+        state.pendingUploadFile = file;
         const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
-        document.getElementById('paperFileNameDisplay').textContent = `Selected: ${file.name} (${sizeMb} MB)`;
-        const dataUrl = await readFileAsDataURL(file);
-        state.tempPaperFile = { dataUrl, name: file.name, size: `${sizeMb} MB` };
+        const sizeStr = file.size >= 1024 * 1024 ? `${sizeMb} MB` : `${Math.max(1, Math.round(file.size / 1024))} KB`;
+        document.getElementById('paperFileNameDisplay').textContent = `✓ Selected: ${file.name} (${sizeStr})`;
+      } else {
+        state.pendingUploadFile = null;
       }
     });
 
-    document.getElementById('uploadPaperForm')?.addEventListener('submit', (e) => {
+    // Real Paper Upload Submission
+    document.getElementById('uploadPaperForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const subjectCode = document.getElementById('paperSubjectCodeInput').value.trim().toUpperCase();
       const title = document.getElementById('paperTitleInput').value.trim();
@@ -2090,29 +2049,114 @@
       const description = document.getElementById('paperDescriptionInput').value.trim();
 
       if (!subjectCode || !title) return;
+      const file = state.pendingUploadFile;
+      if (!file) { showToast('Select the original exam PDF before uploading.', 'error'); return; }
       const streams = getStreams();
       const streamObj = streams.find(s => s.id === streamId);
       const user = getUser();
+      const newPaperId = 'paper_' + Date.now();
 
-      savePaper({
-        title,
-        subjectCode,
-        streamId,
-        streamName: streamObj ? streamObj.name : 'University Faculty',
-        semester,
-        examYear,
-        examType,
-        uploaderName: user.name,
-        uploaderStream: user.streamName,
-        fileSize: state.tempPaperFile ? state.tempPaperFile.size : '1.2 MB',
-        description,
-        pdfDataUrl: state.tempPaperFile ? state.tempPaperFile.dataUrl : null,
-        tags: [subjectCode, `Sem${semester}`, `${examYear}`]
+      const uploadStatus = document.getElementById('paperUploadStatus');
+      const uploadStatusText = document.getElementById('paperUploadStatusText');
+      const submitBtn = document.getElementById('btnSubmitUploadPaper');
+
+      if (uploadStatus) uploadStatus.classList.remove('hidden');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
+        const localFileSize = file.size >= 1024 * 1024 ? `${sizeMb} MB` : `${Math.max(1, Math.round(file.size / 1024))} KB`;
+        let fileUrl = null;
+        let fileSize = localFileSize;
+        if (API.isOnline) {
+          if (uploadStatusText) uploadStatusText.textContent = `Uploading ${file.name} (${fileSize}) to server...`;
+          const uploadRes = await API.uploadFile(file);
+          fileUrl = uploadRes.fileUrl;
+          fileSize = uploadRes.fileSize || localFileSize;
+          const created = await API.savePaper({
+            title, subjectCode, streamId,
+            streamName: streamObj ? streamObj.name : 'University Faculty',
+            semester, examYear, examType, description, fileUrl,
+            tags: [subjectCode, `Sem${semester}`, `${examYear}`]
+          });
+          await savePdfToIDB(created.id, new Blob([file], { type: 'application/pdf' }));
+        } else {
+          await savePdfToIDB(newPaperId, new Blob([file], { type: 'application/pdf' }));
+          savePaper({
+            id: newPaperId, title, subjectCode, streamId,
+            streamName: streamObj ? streamObj.name : 'University Faculty',
+            semester, examYear, examType, uploaderName: user.name,
+            fileSize, description, localPdfKey: true,
+            tags: [subjectCode, `Sem${semester}`, `${examYear}`]
+          });
+        }
+        if (uploadStatus) uploadStatus.classList.add('hidden');
+        if (submitBtn) submitBtn.disabled = false;
+        state.pendingUploadFile = null;
+        closeUploadPaperModal();
+        showToast('Question paper PDF uploaded!', 'success');
+        navigateTo('papers');
+      } catch (err) {
+        if (uploadStatus) uploadStatus.classList.add('hidden');
+        if (submitBtn) submitBtn.disabled = false;
+        showToast(err.message || 'Could not upload this PDF.', 'error');
+      }
+    });
+
+    // Edit Profile Modal Handlers
+    document.getElementById('closeEditProfileModalBtn')?.addEventListener('click', closeEditProfileModal);
+    document.getElementById('cancelEditProfileModalBtn')?.addEventListener('click', closeEditProfileModal);
+
+    document.querySelectorAll('.preset-avatar-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const av = e.currentTarget.getAttribute('data-avatar');
+        const input = document.getElementById('modalUserAvatar');
+        const preview = document.getElementById('editProfileAvatarPreview');
+        if (input) input.value = av;
+        if (preview) preview.src = safeImageUrl(av);
       });
+    });
 
-      closeUploadPaperModal();
-      showToast('Question Paper uploaded (+25 Karma)', 'success');
-      navigateTo('papers');
+    document.getElementById('modalUserAvatar')?.addEventListener('input', (e) => {
+      const preview = document.getElementById('editProfileAvatarPreview');
+      if (preview && e.target.value.trim()) preview.src = safeImageUrl(e.target.value.trim());
+    });
+
+    document.getElementById('editProfileModalForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const sId = document.getElementById('modalUserStream').value;
+      const streams = getStreams();
+      const streamObj = streams.find(s => s.id === sId);
+      const name = document.getElementById('modalUserName').value.trim();
+      const username = document.getElementById('modalUserUsername').value.trim().replace(/^@/, '');
+      const rollNo = document.getElementById('modalUserRollNo').value.trim();
+      const bio = document.getElementById('modalUserBio').value.trim();
+      const semester = parseInt(document.getElementById('modalUserSemester').value, 10);
+      const avatarInput = document.getElementById('modalUserAvatar').value.trim();
+
+      const user = getUser();
+      const avatar = avatarInput || user.avatar;
+
+      const updates = {
+        name,
+        username,
+        rollNo,
+        bio,
+        semester,
+        stream: sId,
+        streamName: streamObj ? streamObj.name : 'University Faculty',
+        avatar
+      };
+      let updated;
+      try { updated = API.isOnline ? await API.updateUser(updates) : updateUser(updates); }
+      catch (err) { showToast(err.message || 'Could not update the profile.', 'error'); return; }
+
+      closeEditProfileModal();
+      showToast(`Profile updated! Welcome, ${updated.name}`, 'success');
+      updateHeaderUserBadge();
+      if (state.currentView === 'profile') {
+        renderProfileView();
+      }
     });
 
     document.getElementById('btnCopyShareUrl')?.addEventListener('click', async () => {
@@ -2134,6 +2178,7 @@
     window.addEventListener('click', (e) => {
       if (e.target.id === 'createPostModal') closeCreatePostModal();
       if (e.target.id === 'uploadPaperModal') closeUploadPaperModal();
+      if (e.target.id === 'editProfileModal') closeEditProfileModal();
       if (e.target.id === 'shareAppModal') closeShareModal();
       if (e.target.id === 'paperPreviewModal') document.getElementById('paperPreviewModal')?.classList.add('hidden');
       if (e.target.id === 'imageLightboxModal') document.getElementById('imageLightboxModal')?.classList.add('hidden');
@@ -2147,6 +2192,7 @@
       if (e.key === 'Escape') {
         closeCreatePostModal();
         closeUploadPaperModal();
+        closeEditProfileModal();
         closeShareModal();
         document.getElementById('paperPreviewModal')?.classList.add('hidden');
         document.getElementById('imageLightboxModal')?.classList.add('hidden');
@@ -2162,6 +2208,8 @@
   window.closeCreatePostModal = closeCreatePostModal;
   window.openUploadPaperModal = openUploadPaperModal;
   window.closeUploadPaperModal = closeUploadPaperModal;
+  window.openEditProfileModal = openEditProfileModal;
+  window.closeEditProfileModal = closeEditProfileModal;
   window.openShareModal = openShareModal;
   window.closeShareModal = closeShareModal;
 
@@ -2191,7 +2239,7 @@
     const modal = document.getElementById('imageLightboxModal');
     const img = document.getElementById('lightboxImage');
     if (modal && img) {
-      img.src = imageUrl;
+      img.src = safeImageUrl(imageUrl);
       modal.classList.remove('hidden');
     }
   };
@@ -2207,20 +2255,23 @@
     if (success) showToast('App link copied to clipboard!', 'share');
   };
 
-  window.promptAddCourse = () => {
+  window.promptAddCourse = async () => {
     const name = prompt("Enter Faculty / Course Name (e.g., Department of Forestry):");
     if (!name || !name.trim()) return;
     const code = prompt("Enter Course Degree Code (e.g., B.Sc Forestry / M.Sc):", "UG / PG Degree");
     const desc = prompt("Enter brief description of subjects covered:", "Academic study and practical coursework at SSJU.");
     const icon = prompt("Enter an emoji icon (e.g., 🌲, 🔬, 📚, 🎓):", "🎓");
 
-    const created = saveStream({
+    const streamData = {
       name: name.trim(),
       code: (code || "Degree").trim(),
       description: (desc || "Academic department").trim(),
       icon: (icon || "🎓").trim(),
       color: "from-blue-600 to-indigo-700"
-    });
+    };
+    let created;
+    try { created = API.isOnline ? await API.saveStream(streamData) : saveStream(streamData); }
+    catch (err) { showToast(err.message || 'Could not add this faculty.', 'error'); return; }
 
     showToast(`Added ${created.name} successfully!`, 'success');
     renderStreamsView();
@@ -2229,10 +2280,27 @@
   // ========================================================
   // 8. BOOTSTRAP ON LOAD
   // ========================================================
-  function initApp() {
+  async function initApp() {
     initStorage();
     applyTheme();
     initEventListeners();
+
+    // This app requires the Node service; file:// mode would silently use stale local demo data.
+    const main = document.getElementById('mainContentArea');
+    if (!window.location.protocol.startsWith('http')) {
+      if (main) main.textContent = 'Start the Node server, then open SSJU Connect at http://localhost:3000.';
+      return;
+    }
+    if (!await API.check()) {
+      if (main) main.textContent = 'SSJU Connect cannot reach its server. Refresh after the server is available.';
+      return;
+    }
+    const synced = await API.syncAll();
+    if (!synced) {
+      if (main) main.textContent = 'Could not load your account data. Check your connection and refresh the page.';
+      return;
+    }
+    updateHeaderUserBadge();
 
     // Check URL hash for initial subpage (e.g. #streams, #papers, #profile, #settings)
     const initialHash = window.location.hash.replace(/^#\/?/, '');

@@ -1,156 +1,59 @@
-# SSJU Connect &bull; Campus Social & PYQ Question Paper Portal
+# SSJU Connect
 
-> A fully responsive, modern **Quora & Reddit hybrid web application** tailored for **Soban Singh Jeena University (SSJU)** students, faculty, and alumni.
+SSJU Connect is a campus community for Soban Singh Jeena University. It includes a discussion feed, faculty directory, student profiles, search, sharing, and a vault for student-contributed previous-year question paper PDFs.
 
----
+The frontend is a single page app in `index.html` and `app.bundle.js`, styled with Tailwind's CDN and `styles.css`. `server.js` is the supported backend. It uses Node's built-in modules and stores JSON data and uploaded PDFs on disk. `server.py` is only a compatibility launcher that starts the same Node server; it is not a separate backend.
 
-## 🌟 Key Features
+## Run locally
 
-### 1. 🏠 Home Page (Quora & Reddit Hybrid Feed)
-- **Top Bar Post Creator**: *"What do you want to ask or share about SSJU?"* with quick buttons to **Ask Question**, **Post Image**, or **Upload Paper PDF**.
-- **Interactive Post Cards**:
-  - Reddit/Quora style **Upvote / Downvote pill** with live score calculations.
-  - Verified student / faculty badges, branch labels, and timestamp.
-  - Formatted text & expandable question discussions.
-  - College photos and attachments with full-screen zoom Lightbox.
-  - Clickable topic tags (`#EndTermExams`, `#Placements`, `#Spandan2026`).
-  - **Answers & Comments System**: Inline answer textarea with author badge, upvoting, and nested reply structure.
-  - One-click post sharing & bookmarking.
-- **Feed Sub-Filters**:
-  - 🔥 **Everything** (All campus posts)
-  - ⚡ **Top Upvoted** (Trending by votes)
-  - ❓ **Doubts & Questions** (Academic Q&A)
-  - 🎉 **Campus Events** (Fests, auditions, sports)
-  - 📢 **Notices** (Official university announcements)
-  - Stream-specific feed filtering dropdown.
+Install Node.js 18 or newer, then run:
 
----
-
-### 2. 🏛️ Department & Stream Selection Page
-- Dedicated directory of university faculties and streams:
-  - **B.Tech CSE & IT** (Computer Science & Engineering)
-  - **BCA & MCA** (Computer Applications)
-  - **Faculty of Science** (B.Sc / M.Sc Physics, Chemistry, Math, Botany, Zoology)
-  - **Commerce & Finance** (B.Com / M.Com)
-  - **Management Studies** (BBA / MBA)
-  - **Arts & Humanities** (B.A. / M.A.)
-  - **Faculty of Law** (LL.B / LL.M)
-  - **Pharmacy & Medical Sciences** (B.Pharm / D.Pharm)
-- Displays active student counts, question papers count, and direct shortcuts to filter feeds or view department-specific PYQ papers.
-- Ability to set primary stream in your profile.
-
----
-
-### 3. 📄 Question Paper (PYQ) Vault: Upload & Download
-- **Anyone can upload question paper PDFs**:
-  - Upload real `.pdf` files via drag-and-drop or file picker.
-  - Specify subject code, subject title, department stream, semester (1 to 8), exam year (2021–2026), and exam type (End-Term, Mid-Term, Backlog).
-  - Automatically calculates file size and stores the document securely in local browser storage.
-  - Earns **+25 Campus Karma** points and a *"PYQ Donor"* badge!
-- **Instant PDF Downloads**:
-  - One-click download button triggers fast download of the authentic PDF exam paper with proper file naming (`SSJU_CSE_CS301_2025.pdf`).
-  - Pre-seeded question papers dynamically generate an official formatted SSJU university exam paper using **jsPDF** with university header, exam sections (Section A, B, C), and marking scheme!
-- **Interactive Preview Modal**:
-  - Inspect the question paper directly on your screen without leaving the page.
-- **Filters & Search**:
-  - Filter question papers by Department, Semester, and live Subject / Code search.
-
----
-
-### 4. 👤 Corner Profile & Settings
-- **Top-Right Corner Avatar**:
-  - Clickable avatar dropdown menu with quick profile stats, stream info, dark mode toggle, and settings shortcuts.
-- **Dedicated Profile View**:
-  - Cover photo, customizable avatar, roll number, stream, semester, and bio.
-  - **Campus Karma** reputation score and achievement badges (*"Top Doubt Solver"*, *"Campus Contributor"*, *"PYQ Uploader"*).
-  - Tabbed history:
-    - **My Posts**: Review all posts you created with one-click delete option.
-    - **Uploaded PYQs**: View all question papers you contributed.
-    - **Saved Bookmarks**: Quick access to saved questions and papers.
-- **Dedicated Settings View**:
-  - Edit full name, username, email, roll number, bio, primary stream, and semester.
-  - **Appearance Preferences**: Toggle **Dark Mode** / **Light Mode** (persists in storage).
-  - Reset to default demo data option.
-
----
-
-### 5. 🔍 Universal Search
-- Real-time search in top navigation bar (`/` shortcut to instantly focus).
-- Unified search results spanning:
-  1. Campus questions and discussions (title, description, tags).
-  2. Question papers and subject codes.
-  3. University streams and departments.
-
----
-
-### 6. 📲 "Share the App" Feature
-- Prominent **"Share App"** button in header, right sidebar, and profile dropdown.
-- **Interactive Share Dialog**:
-  - **Dynamic QR Code**: High-resolution SVG QR code that smartphone cameras can scan immediately.
-  - **Direct URL Copy**: One-click copy with animated toast notification.
-  - **Mobile Native Share**: Integrates with device Web Share API (`navigator.share`) on mobile devices.
-  - **Social Sharing**: Direct share shortcuts to **WhatsApp**, **Telegram**, **Twitter / X**, and **LinkedIn**.
-
----
-
-### 7. 📱 100% Fully Responsive
-- **Desktop (1024px+)**: Full 3-column Reddit/Quora layout (Left navigation & streams, Center feed, Right trending & PYQ widgets).
-- **Tablet (768px - 1023px)**: 2-column layout with responsive stream switcher.
-- **Mobile (<768px)**: Optimized mobile web app experience:
-  - Sticky top header with brand and search.
-  - Floating center **(+) Ask/Post** action button.
-  - Native-style **Bottom Navigation Bar** (*Feed*, *Streams*, *(+)*, *PYQs*, *Profile*).
-
----
-
-## 🚀 How to Run the App
-
-You have multiple instant options:
-
-### Option 1: Direct File Launch (No setup required!)
-Simply open `index.html` in any modern web browser (Google Chrome, Microsoft Edge, Firefox, Brave, Safari).
-```
-Double-click: e:\SSJU.Connect\index.html
-```
-
-### Option 2: Windows One-Click Launcher
-Double-click `start.bat` in File Explorer:
-```cmd
-start.bat
-```
-
-### Option 3: Python Local Server
 ```bash
-python server.py
-# Or:
-python -m http.server 3000
+npm start
 ```
-Then visit: `http://localhost:3000`
 
-### Option 4: Node.js Local Server
-```bash
-node server.js
-```
-Then visit: `http://localhost:3000`
+Open [http://localhost:3000](http://localhost:3000), create an account, and sign in. The app must be opened through the Node server; opening `index.html` directly will not load local demo data. `start.bat` starts the same server on Windows.
 
----
+By default, the JSON database is `data/db.json` and PDF files are in `uploads/`. Set `DATA_DIR` and `UPLOAD_DIR` to use other locations. Keep these directories private and backed up; they contain account data and user uploads.
 
-## 📁 File Structure
+## Deploy on Render
 
-```
-e:\SSJU.Connect\
-├── index.html          # Core responsive Quora/Reddit HTML application
-├── css\
-│   └── styles.css      # Custom animations, Quora/Reddit vote pills, dark mode
-├── js\
-│   ├── app.js          # Main router, UI event listeners & state manager
-│   ├── data.js         # Initial mock streams, posts, papers & profiles
-│   ├── storage.js      # LocalStorage persistence for posts, papers, & settings
-│   ├── pdf-helper.js   # PDF upload, jsPDF exam paper generator & downloader
-│   └── share-helper.js # QR code generator, clipboard & social share links
-├── server.py           # Optional Python HTTP server with auto-launch
-├── server.js           # Optional Node.js HTTP server
-├── start.bat           # Windows quick-launch script
-├── package.json        # Project metadata
-└── README.md           # Documentation
+The checked-in [`render.yaml`](render.yaml) deploys one Node web service and mounts a 1 GB persistent disk at `/var/data`. The service plan is Starter because Render requires a paid web service for a persistent disk. Render's filesystem is otherwise ephemeral; the disk preserves data across deploys. A disk-backed service is single-instance and cannot scale horizontally. See Render's [persistent disk documentation](https://render.com/docs/disks) and [Blueprint reference](https://render.com/docs/blueprint-spec).
+
+1. Push this project to a GitHub repository.
+2. In Render, create a new Blueprint and select the repository.
+3. Review the service and disk from `render.yaml`, then apply the Blueprint.
+4. Open the service URL and create an account.
+
+Send friends the public Render service URL (for example, `https://ssju-connect.onrender.com` if that hostname is assigned). `localhost` links only work on the computer running the server. Once hosted, the in-app Share dialog generates its link and QR code from the public hostname. The URL stays available while the Render service remains deployed; you can also attach a custom domain.
+
+The Blueprint requests `https://ssju-connect.onrender.com`. If Render assigns a different hostname, update the structured-data URL in `index.html`, plus `robots.txt` and `sitemap.xml`.
+
+For larger deployments, move account and feed data to a managed database and PDFs to object storage before running multiple instances.
+
+## Security and data behavior
+
+- Static HTTP access is limited to the named app files. The database, server source, configuration, scraper output, and project directories are not served.
+- Sign-up and sign-in use per-account random salts with `crypto.scrypt`. Bearer tokens expire after seven days; the database stores token fingerprints, not the token values. The first launch after the session-storage upgrade revokes old sessions, so users sign in again.
+- Creating posts, comments, papers, profile changes, and faculty entries requires a valid session. Author identity, votes, reputation, and upload ownership are set or checked by the server.
+- User text is escaped before it is rendered. Avatar and attachment URLs are restricted to supported image schemes.
+- Paper uploads must be PDFs (including a `%PDF-` file signature), are limited to 20 MB, and are tied to the uploading account. A vault entry cannot be created without its uploaded file. The vault does not fabricate or generate exam papers, and existing placeholder rows without stored PDFs are removed during database migration.
+- The share dialog requests a real QR image from [QR Server](https://goqr.me/api/), passing it the public app URL.
+
+## Files
+
+```text
+index.html          App shell and dialogs
+app.bundle.js       Served frontend and UI logic
+styles.css          Custom styles
+server.js           Authenticated Node.js API and allowlisted static server
+server.py           Compatibility launcher for server.js
+package.json        Project metadata and start command
+render.yaml         Render service and persistent disk configuration
+data/db.json        Runtime database (ignored by Git)
+uploads/            Runtime PDF files (ignored by Git)
+robots.txt          Crawler rules for the Render hostname
+sitemap.xml         Sitemap for the Render hostname
+scrape_ssju.py      Optional title scraper; its output is not loaded by the app
+ssju_scraped_papers.json  Scraper output; not served or imported
 ```
